@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - Transcore Logistics</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: auto;
+      border-radius: 100%;
+    }
+
+    /* Hero Section */
+    .careers-hero {
+      background: linear-gradient(135deg, var(--prussian-blue) 0%, var(--green-blue-crayola) 100%);
+      padding: 140px 0 100px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('./assets/images/hero-banner.jpg') center/cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .careers-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(32, 75, 47, 0.8), rgba(202, 75, 47, 0.6));
+      z-index: 1;
+    }
+
+    .careers-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .careers-hero h1 {
+      font-size: var(--fs-1);
+      margin-bottom: 25px;
+      font-weight: var(--fw-700);
+      text-transform: uppercase;
+      background: linear-gradient(45deg, var(--white), var(--dark-orange), var(--white));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+      position: relative;
+    }
+
+    .careers-hero h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dark-orange), var(--green-blue-crayola));
+      border-radius: 2px;
+      animation: expandWidth 2s ease-in-out infinite;
+    }
+
+    .careers-hero p {
+      font-size: var(--fs-7);
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+      line-height: 1.7;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
+      to { filter: drop-shadow(0 0 25px rgba(255,255,255,0.8)); }
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    @keyframes expandWidth {
+      0%, 100% { width: 100px; }
+      50% { width: 150px; }
+    }
+
+    /* Culture Section */
+    .culture-section {
+      padding: 100px 0;
+      background: var(--alice-blue);
+    }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .culture-card {
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .culture-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-blue-crayola), var(--dark-orange));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .culture-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    }
+
+    .culture-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .culture-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--green-blue-crayola), var(--prussian-blue));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2.5rem;
+      color: white;
+      transition: all 0.4s ease;
+    }
+
+    .culture-card:hover .culture-icon {
+      background: linear-gradient(135deg, var(--dark-orange), #ff8c00);
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .culture-card h3 {
+      color: var(--prussian-blue);
+      font-size: var(--fs-6);
+      margin-bottom: 15px;
+      font-weight: var(--fw-600);
+    }
+
+    .culture-card p {
+      color: var(--onyx);
+      font-size: var(--fs-8);
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    /* Job Listings */
+    .jobs-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .job-filters {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 12px 25px;
+      border: 2px solid var(--cultured-1);
+      background: var(--white);
+      color: var(--onyx);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: var(--fw-500);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--green-blue-crayola);
+      color: white;
+      border-color: var(--green-blue-crayola);
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+    }
+
+    .job-card {
+      background: var(--alice-blue);
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid transparent;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-blue-crayola), var(--dark-orange));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      border-color: var(--dark-orange);
+    }
+
+    .job-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .job-title {
+      color: var(--prussian-blue);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-600);
+      margin-bottom: 5px;
+    }
+
+    .job-location {
+      color: var(--dark-orange);
+      font-size: var(--fs-9);
+      font-weight: var(--fw-500);
+    }
+
+    .job-type {
+      background: var(--green-blue-crayola);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: var(--fs-10);
+      font-weight: var(--fw-500);
+    }
+
+    .job-description {
+      color: var(--onyx);
+      font-size: var(--fs-8);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .job-requirements {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+    }
+
+    .job-requirements li {
+      padding: 5px 0;
+      color: var(--onyx);
+      font-size: var(--fs-9);
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .job-requirements li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--green-blue-crayola);
+      font-weight: bold;
+    }
+
+    .apply-job-btn {
+      background: linear-gradient(45deg, var(--green-blue-crayola), var(--prussian-blue));
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: var(--fw-600);
+      font-size: var(--fs-8);
+      transition: all 0.3s ease;
+    }
+
+    .apply-job-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Application Form */
+    .application-section {
+      padding: 100px 0;
+      background: var(--alice-blue);
+    }
+
+    .application-form {
+      background: var(--white);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .application-form h3 {
+      color: var(--prussian-blue);
+      font-size: var(--fs-5);
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .application-form h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--dark-orange);
+      border-radius: 2px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--prussian-blue);
+      font-weight: var(--fw-600);
+      margin-bottom: 8px;
+      font-size: var(--fs-8);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid var(--cultured-1);
+      border-radius: 10px;
+      font-size: var(--fs-8);
+      transition: all 0.3s ease;
+      background: var(--white);
+      color: var(--onyx);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--green-blue-crayola);
+      box-shadow: 0 0 0 3px rgba(32, 75, 47, 0.1);
+    }
+
+    .submit-application-btn {
+      background: linear-gradient(45deg, var(--dark-orange), #ff8c00);
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: var(--fs-8);
+      font-weight: var(--fw-600);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .submit-application-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .careers-hero h1 {
+        font-size: var(--fs-3);
+      }
+
+      .careers-hero p {
+        font-size: var(--fs-8);
+      }
+
+      .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .jobs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job-filters {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .application-form {
+        padding: 30px 20px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .careers-hero {
+        padding: 100px 0 60px;
+      }
+
+      .careers-hero h1 {
+        font-size: var(--fs-4);
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .job-type {
+        align-self: flex-start;
+      }
+    }
+  </style>
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+  
+      <h1>
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+          Transcore Logistics
+        </a>
+      </h1>
+  
+      <nav class="navbar" data-navbar>
+  
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+            Transcore Logistics
+          </a>
+  
+          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+  
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+  
+          <li class="navbar-item">
+            <a href="index.html#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+  
+          <li class="navbar-item">
+            <a href="services.html" class="navbar-link" data-nav-link>
+              <span>Service</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+  
+          <li class="navbar-item">
+            <a href="tracking.html" class="navbar-link" data-nav-link>
+              <span>Tracking</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="network.html" class="navbar-link" data-nav-link>
+              <span>Our Network</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="careers.html" class="navbar-link active" data-nav-link>
+              <span>Careers</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+        </ul>
+  
+      </nav>
+  
+      <div class="header-contact">
+        <div>
+          <p class="contact-label">For inquiry</p>
+          <a href="tel:9664874523" class="contact-number">
+            <span>9664874523</span> 9306862567
+          </a>
+        </div>
+        
+        <a href="tel:9664874523" class="contact-icon">
+          <ion-icon name="call-outline"></ion-icon>
+        </a>
+      </div>
+  
+      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+  
+      <div class="overlay" data-nav-toggler data-overlay></div>
+  
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO SECTION -->
+      <section class="careers-hero" data-aos="fade-down" data-aos-duration="1000">
+        <div class="container">
+          <h1 data-aos="zoom-in" data-aos-delay="300">Join Our Team</h1>
+          <p data-aos="fade-up" data-aos-delay="500">
+            Build your career with India's leading logistics company. We offer exciting opportunities for growth, learning, and professional development in a dynamic and supportive environment.
+          </p>
+        </div>
+      </section>
+
+      <!-- CULTURE SECTION -->
+      <section class="culture-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Our Culture</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="400">
+            At Transcore Logistics, we believe in fostering a culture of innovation, collaboration, and continuous learning. Join us and be part of something extraordinary.
+          </p>
+
+          <div class="culture-grid">
+            <div class="culture-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="culture-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3>Team Collaboration</h3>
+              <p>Work with talented professionals in a collaborative environment that encourages knowledge sharing and mutual support.</p>
+            </div>
+
+            <div class="culture-card" data-aos="fade-up" data-aos-delay="800">
+              <div class="culture-icon">
+                <ion-icon name="trending-up-outline"></ion-icon>
+              </div>
+              <h3>Career Growth</h3>
+              <p>Continuous learning opportunities and clear career progression paths to help you achieve your professional goals.</p>
+            </div>
+
+            <div class="culture-card" data-aos="fade-up" data-aos-delay="1000">
+              <div class="culture-icon">
+                <ion-icon name="heart-outline"></ion-icon>
+              </div>
+              <h3>Work-Life Balance</h3>
+              <p>We value your well-being and offer flexible work arrangements to maintain a healthy work-life balance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOB LISTINGS -->
+      <section class="jobs-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Open Positions</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="400">
+            Explore our current job openings and find the perfect role that matches your skills and career aspirations.
+          </p>
+
+          <div class="job-filters" data-aos="fade-up" data-aos-delay="600">
+            <button class="filter-btn active" onclick="filterJobs('all')">All Positions</button>
+            <button class="filter-btn" onclick="filterJobs('operations')">Operations</button>
+            <button class="filter-btn" onclick="filterJobs('customer-service')">Customer Service</button>
+            <button class="filter-btn" onclick="filterJobs('management')">Management</button>
+          </div>
+
+          <div class="jobs-grid">
+            <div class="job-card" data-category="operations" data-aos="fade-up" data-aos-delay="800">
+              <div class="job-header">
+                <div>
+                  <h3 class="job-title">Fleet Operations Manager</h3>
+                  <p class="job-location">Vadodara, Gujarat</p>
+                </div>
+                <span class="job-type">Full-time</span>
+              </div>
+              <p class="job-description">
+                Lead our fleet operations team and ensure efficient delivery of logistics services across our network.
+              </p>
+              <ul class="job-requirements">
+                <li>5+ years experience in logistics operations</li>
+                <li>Strong leadership and communication skills</li>
+                <li>Knowledge of fleet management systems</li>
+                <li>Bachelor's degree in relevant field</li>
+              </ul>
+              <button class="apply-job-btn" onclick="applyForJob('Fleet Operations Manager')">Apply Now</button>
+            </div>
+
+            <div class="job-card" data-category="customer-service" data-aos="fade-up" data-aos-delay="1000">
+              <div class="job-header">
+                <div>
+                  <h3 class="job-title">Customer Service Representative</h3>
+                  <p class="job-location">Delhi, NCR</p>
+                </div>
+                <span class="job-type">Full-time</span>
+              </div>
+              <p class="job-description">
+                Provide exceptional customer support and ensure client satisfaction through effective communication.
+              </p>
+              <ul class="job-requirements">
+                <li>2+ years customer service experience</li>
+                <li>Excellent communication skills</li>
+                <li>Proficiency in CRM systems</li>
+                <li>Graduate in any discipline</li>
+              </ul>
+              <button class="apply-job-btn" onclick="applyForJob('Customer Service Representative')">Apply Now</button>
+            </div>
+
+            <div class="job-card" data-category="management" data-aos="fade-up" data-aos-delay="1200">
+              <div class="job-header">
+                <div>
+                  <h3 class="job-title">Logistics Manager</h3>
+                  <p class="job-location">Hisar, Haryana</p>
+                </div>
+                <span class="job-type">Full-time</span>
+              </div>
+              <p class="job-description">
+                Oversee logistics operations and optimize processes for maximum efficiency and cost-effectiveness.
+              </p>
+              <ul class="job-requirements">
+                <li>7+ years logistics management experience</li>
+                <li>Strong analytical and problem-solving skills</li>
+                <li>Experience with logistics software</li>
+                <li>MBA in Supply Chain preferred</li>
+              </ul>
+              <button class="apply-job-btn" onclick="applyForJob('Logistics Manager')">Apply Now</button>
+            </div>
+
+            <div class="job-card" data-category="operations" data-aos="fade-up" data-aos-delay="1400">
+              <div class="job-header">
+                <div>
+                  <h3 class="job-title">Warehouse Supervisor</h3>
+                  <p class="job-location">Vadodara, Gujarat</p>
+                </div>
+                <span class="job-type">Full-time</span>
+              </div>
+              <p class="job-description">
+                Manage warehouse operations and ensure smooth handling of goods and inventory management.
+              </p>
+              <ul class="job-requirements">
+                <li>3+ years warehouse management experience</li>
+                <li>Knowledge of inventory systems</li>
+                <li>Strong organizational skills</li>
+                <li>Diploma or degree in relevant field</li>
+              </ul>
+              <button class="apply-job-btn" onclick="applyForJob('Warehouse Supervisor')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPLICATION FORM -->
+      <section class="application-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Apply Now</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="400">
+            Ready to join our team? Fill out the application form below and we'll get back to you soon.
+          </p>
+
+          <div class="application-form" data-aos="fade-up" data-aos-delay="600">
+            <h3>Job Application Form</h3>
+            
+            <form id="applicationForm" onsubmit="handleApplicationSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="appFirstName">First Name *</label>
+                  <input type="text" id="appFirstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                  <label for="appLastName">Last Name *</label>
+                  <input type="text" id="appLastName" name="lastName" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="appEmail">Email Address *</label>
+                  <input type="email" id="appEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="appPhone">Phone Number *</label>
+                  <input type="tel" id="appPhone" name="phone" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="appPosition">Position Applied For *</label>
+                <select id="appPosition" name="position" required>
+                  <option value="">Select a position</option>
+                  <option value="Fleet Operations Manager">Fleet Operations Manager</option>
+                  <option value="Customer Service Representative">Customer Service Representative</option>
+                  <option value="Logistics Manager">Logistics Manager</option>
+                  <option value="Warehouse Supervisor">Warehouse Supervisor</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="appExperience">Years of Experience *</label>
+                <select id="appExperience" name="experience" required>
+                  <option value="">Select experience level</option>
+                  <option value="0-2 years">0-2 years</option>
+                  <option value="3-5 years">3-5 years</option>
+                  <option value="6-10 years">6-10 years</option>
+                  <option value="10+ years">10+ years</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="appEducation">Highest Education *</label>
+                <select id="appEducation" name="education" required>
+                  <option value="">Select education level</option>
+                  <option value="High School">High School</option>
+                  <option value="Diploma">Diploma</option>
+                  <option value="Bachelor's Degree">Bachelor's Degree</option>
+                  <option value="Master's Degree">Master's Degree</option>
+                  <option value="PhD">PhD</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="appMessage">Why would you like to join Transcore Logistics? *</label>
+                <textarea id="appMessage" name="message" rows="5" placeholder="Tell us about your interest in this position and why you'd be a great fit..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-application-btn">Submit Application</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">Transcore Logistics</a>
+
+          <p class="footer-text">
+            Delivering reliable and efficient road freight solutions tailored to your needs.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100005618206069" class="social-link" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100005618206069" class="social-link" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://www.instagram.com/vikasgiri1212?igsh=MTlxaGZla3N3bGFnbQ==" class="social-link" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100005618206069" class="social-link" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@transcorelogistics.in" class="social-link">
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick Links</p>
+          </li>
+
+          <li>
+            <a href="index.html#about" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="index.html#service" class="footer-link">Services</a>
+          </li>
+
+          <li>
+            <a href="tracking.html" class="footer-link">Tracking</a>
+          </li>
+
+          <li>
+            <a href="network.html" class="footer-link">Our Network</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Road Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Full Truckload (FTL)</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Less Than Truckload (LTL)</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Express Delivery</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Last Mile Delivery</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Community</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Business Consulting</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Testimonials</a>
+          </li>
+
+          <li>
+            <a href="tracking.html" class="footer-link">Track Your Shipment</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Condition</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2025 Transcore Logistics. All Rights Reserved <a href="#" class="copyright-link"></a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Job Filtering
+    function filterJobs(category) {
+      const jobCards = document.querySelectorAll('.job-card');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      
+      // Update active button
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Filter jobs
+      jobCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeIn 0.5s ease-in';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Apply for job
+    function applyForJob(position) {
+      document.getElementById('appPosition').value = position;
+      document.getElementById('applicationForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Application form handler
+    function handleApplicationSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('applicationForm');
+      const submitBtn = form.querySelector('.submit-application-btn');
+      const originalText = submitBtn.textContent;
+      
+      // Get form data
+      const formData = new FormData(form);
+      const data = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        position: formData.get('position'),
+        experience: formData.get('experience'),
+        education: formData.get('education'),
+        message: formData.get('message')
+      };
+      
+      // Show loading state
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+      
+      // Create email content
+      const emailSubject = 'Job Application - Transcore Logistics';
+      const emailBody = `
+New job application from Transcore Logistics careers page:
+
+Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Phone: ${data.phone}
+Position: ${data.position}
+Experience: ${data.experience}
+Education: ${data.education}
+
+Message:
+${data.message}
+
+---
+This application was submitted through the careers page on your website.
+      `;
+      
+      // Send email using mailto
+      const mailtoLink = `mailto:hr@transcorelogistics.in?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Try to open email client
+      const emailWindow = window.open(mailtoLink, '_blank');
+      
+      if (emailWindow) {
+        showNotification('Application submitted successfully! We will review your application and get back to you soon.', 'success');
+        form.reset();
+      } else {
+        showNotification('Please manually send an email to hr@transcorelogistics.in with your application details.', 'info');
+      }
+      
+      // Reset button
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    }
+    
+    // Notification function
+    function showNotification(message, type) {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <div class="notification-content">
+          <span class="notification-message">${message}</span>
+          <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+      `;
+      
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        max-width: 400px;
+        animation: slideIn 0.3s ease-out;
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove();
+        }
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html> 

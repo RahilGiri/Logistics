@@ -16,6 +16,11 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/tracking.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <style>
      /* .hero-text {
     word-spacing: 50px;
@@ -61,8 +66,8 @@
   
       <h1>
         <a href="#" class="logo">
-          <img src="./assets/images/logo1.png" alt="Logo" class="logo-img">
-          Integrated Logistics
+          <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+          Transcore Logistics
         </a>
       </h1>
   
@@ -70,8 +75,8 @@
   
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="./assets/images/logo.jpeg" alt="Logo" class="logo-img">
-            Integrated Logistics
+            <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+            Transcore Logistics
           </a>
   
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
@@ -88,29 +93,43 @@
           </li>
   
           <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-nav-link>
+            <a href="about.html" class="navbar-link" data-nav-link>
               <span>About</span>
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
   
           <li class="navbar-item">
-            <a href="#service" class="navbar-link" data-nav-link>
+            <a href="services.html" class="navbar-link" data-nav-link>
               <span>Service</span>
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
   
-          <li class="navbar-item">
-            <a href="#blog" class="navbar-link" data-nav-link>
-              <span>Team</span>
+                    <li class="navbar-item">
+            <a href="tracking.html" class="navbar-link" data-nav-link>
+              <span>Tracking</span>
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-  
+
           <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="network.html" class="navbar-link" data-nav-link>
+              <span>Our Network</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="contact.html" class="navbar-link" data-nav-link>
               <span>Contact</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="careers.html" class="navbar-link" data-nav-link>
+              <span>Careers</span>
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
@@ -122,7 +141,7 @@
         <div>
           <p class="contact-label">For inquiry</p>
           <a href="tel:9664874523" class="contact-number">
-            <span>9664874523</span> 8168506376
+            <span>9664874523</span> 9306862567
           </a>
         </div>
         
@@ -152,70 +171,125 @@
         - #HERO
       -->
 
-      <section class="section hero" aria-label="home" id="home"
+      <section class="section hero" aria-label="home" id="home" data-aos="fade-down" data-aos-duration="1000"
       style="background-image: url('./assets/images/hero-banner.jpg'); position: relative;">
-  <div class="container">
-
-      <div class="hero-content">
-
-          <h2 class="h1 hero-title">
+        <div class="container">
+          <div class="hero-content" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">
+            <h2 class="h1 hero-title" data-aos="zoom-in" data-aos-delay="500">
               <span class="span">To Every</span> Direction
-          </h2>
+            </h2>
 
-          <p class="hero-text" style="color: coral;">
+            <p class="hero-text" style="color: coral;" data-aos="fade-up" data-aos-delay="700">
               SAFE , ECONOMIC , FAST - <strong>ALL OVER INDIA SERVICES</strong> 
-          </p>
+            </p>
 
-          <a href="#" class="btn-outline">View Services</a>
+            <div class="hero-stats">
+              <div class="stat-item" data-aos="flip-left" data-aos-delay="900">
+                <span class="stat-number" data-count="500">0</span>
+                <span class="stat-label">Cities Covered</span>
+              </div>
+              <div class="stat-item" data-aos="flip-up" data-aos-delay="1100">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Successful Deliveries</span>
+              </div>
+              <div class="stat-item" data-aos="flip-right" data-aos-delay="1300">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">Customer Support</span>
+              </div>
+            </div>
 
-          <!-- Positioned Hero Shapes for Proper Coverage
-          <img src="./assets/images/hero-shape.png" width="100%" height="100%" loading="lazy"
-              class="hero-shape shape-1">
-
-          <img src="./assets/images/hero-shape.png" width="100%" height="100%" loading="lazy"
-              class="hero-shape shape-2"> -->
-
-      </div>
-
-  </div>
-</section>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1500">
+              <a href="tracking.html" class="btn-outline">Track Shipment</a>
+              <a href="#service" class="btn">View Services</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
 
 
       <!-- 
+        - #STATISTICS
+      -->
+
+      <section class="section statistics" aria-label="statistics" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="stat-icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-count="500">0</h3>
+                <p class="stat-text">Cities Covered Across India</p>
+              </div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="stat-icon">
+                <ion-icon name="car-outline"></ion-icon>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-count="200">0</h3>
+                <p class="stat-text">Fleet Vehicles</p>
+              </div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="600">
+              <div class="stat-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-count="250">0</h3>
+                <p class="stat-text">Happy Customers</p>
+              </div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="800">
+              <div class="stat-icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-count="5">0</h3>
+                <p class="stat-text">Customer Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
         - #ABOUT
       -->
 
-      <section class="section about" id="about" aria-label="about">
+      <section class="section about" id="about" aria-label="about" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
 
-          <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
+          <figure class="about-banner img-holder" style="--width: 400; --height: 720;" data-aos="slide-right" data-aos-delay="300">
             <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt=""
               class="img-cover">
 
-            <img src="./assets/images/5+.png" width="260" height="170" loading="lazy" alt=""
-              class="abs-img abs-img-1">
+            <!-- <img src="./assets/images/5+.png" width="260" height="170" loading="lazy" alt=""
+              class="abs-img abs-img-1"> -->
 
             <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
               class="abs-img abs-img-2">
           </figure>
 
-          <div class="about-content">
+          <div class="about-content" data-aos="slide-left" data-aos-delay="500">
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="700">Why Choose Us</p>
 
-            <p class="section-subtitle">Why Choose Us</p>
+            <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="900">We Are Professional Logistics</h2>
 
-            <h2 class="h2 section-title">We Are Professional Logistics</h2>
-
-            <p class="section-text">
-              “Delivering excellence with every shipment, ensuring efficiency and reliability.
-Driven by innovation and a commitment to seamless logistics solutions.”
+            <p class="section-text" data-aos="fade-up" data-aos-delay="1100">
+              Delivering excellence with every shipment, ensuring efficiency and reliability. Driven by innovation and a commitment to seamless logistics solutions. With over 10 years of experience, we have built a reputation for reliability, safety, and customer satisfaction across India.
             </p>
 
             <ul class="about-list">
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1300">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -225,7 +299,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
                 </p>
               </li>
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1500">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -235,7 +309,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
                 </p>
               </li>
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1700">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -245,7 +319,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
                 </p>
               </li>
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1900">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -255,7 +329,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
                 </p>
               </li>
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="2100">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -265,7 +339,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
                 </p>
               </li>
 
-              <li class="about-item">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="2300">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
@@ -277,7 +351,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
 
             </ul>
 
-            <a href="#" class="btn">Learn More</a>
+            <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="2500">Learn More</a>
 
           </div>
 
@@ -292,20 +366,20 @@ Driven by innovation and a commitment to seamless logistics solutions.”
         - #SERVICE
       -->
 
-      <section class="section service" id="service" aria-label="service">
+      <section class="section service" id="service" aria-label="service" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
 
-          <p class="section-subtitle">All Services</p>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">All Services</p>
 
-          <h2 class="h2 section-title">Trusted For Our Services</h2>
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Trusted For Our Services</h2>
 
-          <p class="section-text">
+          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
            <span class="h">SAFE , ECONOMIC ,  FAST</span> AROUND THA NATION .................. ROUND THE CLOCK
           </p>
 
         <ul class="service-list grid-list">
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="900">
     <div class="service-card">
 
       <div class="card-icon">
@@ -328,7 +402,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </div>
   </li>
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="1100">
     <div class="service-card">
 
       <div class="card-icon">
@@ -351,7 +425,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </div>
   </li>
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="1300">
     <div class="service-card">
 
       <div class="card-icon">
@@ -374,7 +448,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </div>
   </li>
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="1500">
     <div class="service-card">
 
       <div class="card-icon">
@@ -397,7 +471,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </div>
   </li>
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="1700">
     <div class="service-card">
 
       <div class="card-icon">
@@ -420,7 +494,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </div>
   </li>
 
-  <li>
+  <li data-aos="flip-up" data-aos-delay="1900">
     <div class="service-card">
 
       <div class="card-icon">
@@ -445,6 +519,531 @@ Driven by innovation and a commitment to seamless logistics solutions.”
 
 </ul>
 
+        </div>
+      </section>
+
+
+
+
+      <!-- 
+        - #PARTNERS/COMPANIES
+      -->
+
+      <section class="section partners" aria-label="partners" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+
+          <div class="partners-header" data-aos="fade-up" data-aos-delay="300">
+            <p class="section-subtitle">Our Clients</p>
+            <h2 class="h2 section-title">Trusted by Leading Companies Across Industries</h2>
+            <p class="section-text">
+              We provide reliable logistics solutions to major automotive, energy, infrastructure, consumer goods, and pharmaceutical companies across India, ensuring safe and timely delivery of their products nationwide.
+            </p>
+          </div>
+
+          <div class="partners-container" data-aos="fade-up" data-aos-delay="500">
+            <div class="partners-track">
+              <!-- Automotive Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/tatamotors.png" alt="Tata Motors Logo" />
+                </div>
+                <h3 class="partner-name">Tata Motors</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/mahindra.png" alt="Mahindra & Mahindra Logo" />
+                </div>
+                <h3 class="partner-name">Mahindra & Mahindra</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ashokleyland.png" alt="Ashok Leyland Logo" />
+                </div>
+                <h3 class="partner-name">Ashok Leyland</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/bajajauto.png" alt="Bajaj Auto Logo" />
+                </div>
+                <h3 class="partner-name">Bajaj Auto</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/heromotocorp.png" alt="Hero MotoCorp Logo" />
+                </div>
+                <h3 class="partner-name">Hero MotoCorp</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/tvsmotor.png" alt="TVS Motor Company Logo" />
+                </div>
+                <h3 class="partner-name">TVS Motor Company</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/marutisuzuki.png" alt="Maruti Suzuki India Logo" />
+                </div>
+                <h3 class="partner-name">Maruti Suzuki India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/eichermotors.png" alt="Eicher Motors Logo" />
+                </div>
+                <h3 class="partner-name">Eicher Motors (Royal Enfield)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/forcemotors.png" alt="Force Motors Logo" />
+                </div>
+                <h3 class="partner-name">Force Motors</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/vecommercial.png" alt="VE Commercial Vehicles Logo" />
+                </div>
+                <h3 class="partner-name">VE Commercial Vehicles</h3>
+              </div>
+              
+              <!-- Oil, Energy & Infrastructure Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/reliance.png" alt="Reliance Industries Logo" />
+                </div>
+                <h3 class="partner-name">Reliance Industries</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ongc.png" alt="ONGC Logo" />
+                </div>
+                <h3 class="partner-name">ONGC (Oil & Natural Gas Corporation)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/indianoil.png" alt="Indian Oil Corporation Logo" />
+                </div>
+                <h3 class="partner-name">Indian Oil Corporation (IOC)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/bpcl.png" alt="Bharat Petroleum Logo" />
+                </div>
+                <h3 class="partner-name">Bharat Petroleum Corporation Limited (BPCL)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/hpcl.png" alt="Hindustan Petroleum Logo" />
+                </div>
+                <h3 class="partner-name">Hindustan Petroleum Corporation Limited (HPCL)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ntpc.png" alt="NTPC Limited Logo" />
+                </div>
+                <h3 class="partner-name">NTPC Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/adani.png" alt="Adani Group Logo" />
+                </div>
+                <h3 class="partner-name">Adani Group</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/lt.png" alt="Larsen & Toubro Logo" />
+                </div>
+                <h3 class="partner-name">Larsen & Toubro (L&T)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/gail.png" alt="GAIL Logo" />
+                </div>
+                <h3 class="partner-name">GAIL (India) Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/nhpc.png" alt="NHPC Limited Logo" />
+                </div>
+                <h3 class="partner-name">NHPC Limited</h3>
+              </div>
+              
+              <!-- FMCG Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/hul.png" alt="Hindustan Unilever Limited Logo" />
+                </div>
+                <h3 class="partner-name">Hindustan Unilever Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/itc.png" alt="ITC Limited Logo" />
+                </div>
+                <h3 class="partner-name">ITC Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/dabur.png" alt="Dabur India Logo" />
+                </div>
+                <h3 class="partner-name">Dabur India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/godrej.png" alt="Godrej Consumer Products Logo" />
+                </div>
+                <h3 class="partner-name">Godrej Consumer Products</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/marico.png" alt="Marico Logo" />
+                </div>
+                <h3 class="partner-name">Marico</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/britannia.png" alt="Britannia Industries Logo" />
+                </div>
+                <h3 class="partner-name">Britannia Industries</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/nestle.png" alt="Nestlé India Logo" />
+                </div>
+                <h3 class="partner-name">Nestlé India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/parle.png" alt="Parle Products Logo" />
+                </div>
+                <h3 class="partner-name">Parle Products</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/amul.png" alt="Amul (GCMMF) Logo" />
+                </div>
+                <h3 class="partner-name">Amul (GCMMF)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/patanjali.png" alt="Patanjali Ayurved Logo" />
+                </div>
+                <h3 class="partner-name">Patanjali Ayurved</h3>
+              </div>
+              
+              <!-- Pharmaceutical Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/sunpharma.png" alt="Sun Pharma Logo" />
+                </div>
+                <h3 class="partner-name">Sun Pharma</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/drreddy.png" alt="Dr. Reddy's Laboratories Logo" />
+                </div>
+                <h3 class="partner-name">Dr. Reddy's Laboratories</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/cipla.png" alt="Cipla Logo" />
+                </div>
+                <h3 class="partner-name">Cipla</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/lupin.png" alt="Lupin Logo" />
+                </div>
+                <h3 class="partner-name">Lupin</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/aurobindo.png" alt="Aurobindo Pharma Logo" />
+                </div>
+                <h3 class="partner-name">Aurobindo Pharma</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/zydus.png" alt="Zydus Lifesciences Logo" />
+                </div>
+                <h3 class="partner-name">Zydus Lifesciences</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/torrent.png" alt="Torrent Pharmaceuticals Logo" />
+                </div>
+                <h3 class="partner-name">Torrent Pharmaceuticals</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/glenmark.png" alt="Glenmark Pharmaceuticals Logo" />
+                </div>
+                <h3 class="partner-name">Glenmark Pharmaceuticals</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/biocon.png" alt="Biocon Logo" />
+                </div>
+                <h3 class="partner-name">Biocon</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/alkem.png" alt="Alkem Laboratories Logo" />
+                </div>
+                <h3 class="partner-name">Alkem Laboratories</h3>
+              </div>
+              
+              <!-- Duplicate items for seamless loop -->
+              <!-- Automotive Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/tatamotors.png" alt="Tata Motors Logo" />
+                </div>
+                <h3 class="partner-name">Tata Motors</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/mahindra.png" alt="Mahindra & Mahindra Logo" />
+                </div>
+                <h3 class="partner-name">Mahindra & Mahindra</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ashokleyland.png" alt="Ashok Leyland Logo" />
+                </div>
+                <h3 class="partner-name">Ashok Leyland</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/bajajauto.png" alt="Bajaj Auto Logo" />
+                </div>
+                <h3 class="partner-name">Bajaj Auto</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/heromotocorp.png" alt="Hero MotoCorp Logo" />
+                </div>
+                <h3 class="partner-name">Hero MotoCorp</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/tvsmotor.png" alt="TVS Motor Company Logo" />
+                </div>
+                <h3 class="partner-name">TVS Motor Company</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/marutisuzuki.png" alt="Maruti Suzuki India Logo" />
+                </div>
+                <h3 class="partner-name">Maruti Suzuki India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/eichermotors.png" alt="Eicher Motors Logo" />
+                </div>
+                <h3 class="partner-name">Eicher Motors (Royal Enfield)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/forcemotors.png" alt="Force Motors Logo" />
+                </div>
+                <h3 class="partner-name">Force Motors</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/vecommercial.png" alt="VE Commercial Vehicles Logo" />
+                </div>
+                <h3 class="partner-name">VE Commercial Vehicles</h3>
+              </div>
+              
+              <!-- Oil, Energy & Infrastructure Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/reliance.png" alt="Reliance Industries Logo" />
+                </div>
+                <h3 class="partner-name">Reliance Industries</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ongc.png" alt="ONGC Logo" />
+                </div>
+                <h3 class="partner-name">ONGC (Oil & Natural Gas Corporation)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/indianoil.png" alt="Indian Oil Corporation Logo" />
+                </div>
+                <h3 class="partner-name">Indian Oil Corporation (IOC)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/bpcl.png" alt="Bharat Petroleum Logo" />
+                </div>
+                <h3 class="partner-name">Bharat Petroleum Corporation Limited (BPCL)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/hpcl.png" alt="Hindustan Petroleum Logo" />
+                </div>
+                <h3 class="partner-name">Hindustan Petroleum Corporation Limited (HPCL)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/ntpc.png" alt="NTPC Limited Logo" />
+                </div>
+                <h3 class="partner-name">NTPC Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/adani.png" alt="Adani Group Logo" />
+                </div>
+                <h3 class="partner-name">Adani Group</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/lt.png" alt="Larsen & Toubro Logo" />
+                </div>
+                <h3 class="partner-name">Larsen & Toubro (L&T)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/gail.png" alt="GAIL Logo" />
+                </div>
+                <h3 class="partner-name">GAIL (India) Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/nhpc.png" alt="NHPC Limited Logo" />
+                </div>
+                <h3 class="partner-name">NHPC Limited</h3>
+              </div>
+              
+              <!-- FMCG Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/hul.png" alt="Hindustan Unilever Limited Logo" />
+                </div>
+                <h3 class="partner-name">Hindustan Unilever Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/itc.png" alt="ITC Limited Logo" />
+                </div>
+                <h3 class="partner-name">ITC Limited</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/dabur.png" alt="Dabur India Logo" />
+                </div>
+                <h3 class="partner-name">Dabur India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/godrej.png" alt="Godrej Consumer Products Logo" />
+                </div>
+                <h3 class="partner-name">Godrej Consumer Products</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/marico.png" alt="Marico Logo" />
+                </div>
+                <h3 class="partner-name">Marico</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/britannia.png" alt="Britannia Industries Logo" />
+                </div>
+                <h3 class="partner-name">Britannia Industries</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/nestle.png" alt="Nestlé India Logo" />
+                </div>
+                <h3 class="partner-name">Nestlé India</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/parle.png" alt="Parle Products Logo" />
+                </div>
+                <h3 class="partner-name">Parle Products</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/amul.png" alt="Amul (GCMMF) Logo" />
+                </div>
+                <h3 class="partner-name">Amul (GCMMF)</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/patanjali.png" alt="Patanjali Ayurved Logo" />
+                </div>
+                <h3 class="partner-name">Patanjali Ayurved</h3>
+              </div>
+              
+              <!-- Pharmaceutical Companies -->
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/sunpharma.png" alt="Sun Pharma Logo" />
+                </div>
+                <h3 class="partner-name">Sun Pharma</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/drreddy.png" alt="Dr. Reddy's Laboratories Logo" />
+                </div>
+                <h3 class="partner-name">Dr. Reddy's Laboratories</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/cipla.png" alt="Cipla Logo" />
+                </div>
+                <h3 class="partner-name">Cipla</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/lupin.png" alt="Lupin Logo" />
+                </div>
+                <h3 class="partner-name">Lupin</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/aurobindo.png" alt="Aurobindo Pharma Logo" />
+                </div>
+                <h3 class="partner-name">Aurobindo Pharma</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/zydus.png" alt="Zydus Lifesciences Logo" />
+                </div>
+                <h3 class="partner-name">Zydus Lifesciences</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/torrent.png" alt="Torrent Pharmaceuticals Logo" />
+                </div>
+                <h3 class="partner-name">Torrent Pharmaceuticals</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/glenmark.png" alt="Glenmark Pharmaceuticals Logo" />
+                </div>
+                <h3 class="partner-name">Glenmark Pharmaceuticals</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/biocon.png" alt="Biocon Logo" />
+                </div>
+                <h3 class="partner-name">Biocon</h3>
+              </div>
+              <div class="partner-item">
+                <div class="partner-logo">
+                  <img src="./assets/images/alkem.png" alt="Alkem Laboratories Logo" />
+                </div>
+                <h3 class="partner-name">Alkem Laboratories</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
 
 
 
@@ -452,27 +1051,27 @@ Driven by innovation and a commitment to seamless logistics solutions.”
         - #FEATURE
       -->
 
-      <section class="section feature" aria-label="feature">
+      <section class="section feature" aria-label="feature" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
 
-          <div class="title-wrapper">
+          <div class="title-wrapper" data-aos="fade-up" data-aos-delay="300">
 
             <div>
-              <p class="section-subtitle">Reliable Transport</p>
+              <p class="section-subtitle" data-aos="fade-up" data-aos-delay="500">Reliable Transport</p>
             
-              <h2 class="h2 section-title">Efficient and Flexible Road Logistics</h2>
+              <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="700">Efficient and Flexible Road Logistics</h2>
             
-              <p class="section-text">
+              <p class="section-text" data-aos="fade-up" data-aos-delay="900">
                 We provide tailored road transportation solutions to ensure seamless and timely deliveries, catering to diverse business needs with efficiency and reliability.
               </p>
             </div>
-            <a href="#" class="btn">Read More</a>
+            <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="1100">Read More</a>
 
           </div>
 
           <ul class="feature-list grid-list">
 
-            <li>
+            <li data-aos="slide-right" data-aos-delay="300">
               <div class="feature-card" style="--card-number: '01'">
 
                 <div class="card-icon">
@@ -492,7 +1091,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
               </div>
             </li>
 
-            <li>
+            <li data-aos="slide-up" data-aos-delay="500">
               <div class="feature-card" style="--card-number: '02'">
 
                 <div class="card-icon">
@@ -513,7 +1112,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
               </div>
             </li>
 
-            <li>
+            <li data-aos="slide-left" data-aos-delay="700">
               <div class="feature-card" style="--card-number: '03'">
 
                 <div class="card-icon">
@@ -538,291 +1137,503 @@ Driven by innovation and a commitment to seamless logistics solutions.”
         </div>
       </section>
 
-
-
-
-
-    <!-- 
+      <!-- 
         - #PROJECT
--->
-
-<section class="section project" aria-label="project">
-  <div class="container">
-
-    <p class="section-subtitle">Our Operations</p>
-
-    <h2 class="h2 section-title">Reliable Transportation Solutions</h2>
-
-    <p class="section-text">
-      We specialize in road logistics, offering efficient and timely transportation of goods across multiple locations. 
-      Our expertise ensures seamless delivery and supply chain optimization.
-    </p>
-
-    <ul class="project-list">
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy"
-              alt="Freight Transport" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">Freight & Logistics</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Road Freight Solutions</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy"
-              alt="Fleet Management" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">Logistics, Fleet Operations</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Optimized Fleet Management</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy"
-              alt="Express Delivery" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">Express & Timely Delivery</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Fast & Secure Shipments</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy"
-              alt="Cold Chain Logistics" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">Temperature-Controlled Transport</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Cold Chain Logistics</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy"
-              alt="Last Mile Delivery" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">E-commerce & Last Mile</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Last-Mile Connectivity</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="project-item">
-        <div class="project-card">
-
-          <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-            <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
-              alt="Heavy Load Transportation" class="img-cover">
-          </figure>
-
-          <button class="action-btn" aria-label="View image">
-            <ion-icon name="expand-outline"></ion-icon>
-          </button>
-
-          <div class="card-content">
-            <p class="card-tag">Bulk & Heavy Loads</p>
-
-            <h3 class="h3">
-              <a href="#" class="card-title">Specialized Cargo Transport</a>
-            </h3>
-
-            <a href="#" class="card-link">Learn More</a>
-          </div>
-
-        </div>
-      </li>
-
-    </ul>
-
-  </div>
-</section>
-
-
-
-     <!-- 
-        - #BLOG
       -->
 
-      <section class="section blog" aria-label="blog" id="blog">
+      <section class="section project" aria-label="project" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
-      
-          <p class="section-subtitle">Leadership</p>
-      
-          <h2 class="h2 section-title">Meet Our Team</h2>
-      
-          <p class="section-text">
-            Get to know the minds behind Integrated Logistics who drive our vision forward.
+
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Our Operations</p>
+
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Reliable Transportation Solutions</h2>
+
+          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
+            We specialize in road logistics, offering efficient and timely transportation of goods across multiple locations. 
+            Our expertise ensures seamless delivery and supply chain optimization.
           </p>
-      
-          <ul class="blog-list grid-list">
-      
-            <li>
-              <div class="blog-card">
-      
-                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
-                  <img src="./assets/images/owner2.jpeg" width="770" height="500" loading="lazy"
-                    alt="Rahil Giri - Founder"
-                    class="img-cover">
+
+          <ul class="project-list">
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="900">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy"
+                    alt="Freight Transport" class="img-cover">
                 </figure>
-      
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
                 <div class="card-content">
-      
-                  <time class="card-meta" datetime="2022-08-02">
-                    <span class="span">Founder</span>
-                  </time>
-      
-                  <h3 class="h3 card-title">
-                    <a href="#">KamtaPrasad Giri(KP Giri)</a>
+                  <p class="card-tag">Freight & Logistics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Road Freight Solutions</a>
                   </h3>
-      
-                  <p class="card-text">
-                    Passionate entrepreneur with a vision to revolutionize logistics with innovation and efficiency.
-                  </p>
-      
-                  <a href="#" class="btn-link">
-                    <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-                    <span class="span">Read More</span>
-                  </a>
-      
+
+                  <a href="#" class="card-link">Learn More</a>
                 </div>
-      
+
               </div>
             </li>
-      
-            <li>
-              <div class="blog-card">
-      
-                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
-                  <img src="./assets/images/manager.jpeg" width="770" height="500" loading="lazy"
-                    alt="Vikas Giri - Manager"
-                    class="img-cover">
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="1100">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy"
+                    alt="Fleet Management" class="img-cover">
                 </figure>
-      
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
                 <div class="card-content">
-      
-                  <time class="card-meta" datetime="2022-08-21">
-                    <span class="span">Manager</span>
-                  </time>
-      
-                  <h3 class="h3 card-title">
-                    <a href="#">Vikas Giri</a>
+                  <p class="card-tag">Logistics, Fleet Operations</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Optimized Fleet Management</a>
                   </h3>
-      
-                  <p class="card-text">
-                    Dedicated to optimizing operations and ensuring seamless logistics management for our clients.
-                  </p>
-      
-                  <a href="#" class="btn-link">
-                    <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-                    <span class="span">Read More</span>
-                  </a>
-      
+
+                  <a href="#" class="card-link">Learn More</a>
                 </div>
-      
+
               </div>
             </li>
-      
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="1300">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy"
+                    alt="Express Delivery" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Express & Timely Delivery</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Fast & Secure Shipments</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Learn More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="1500">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy"
+                    alt="Cold Chain Logistics" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Temperature-Controlled Transport</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Cold Chain Logistics</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Learn More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="1700">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy"
+                    alt="Last Mile Delivery" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">E-commerce & Last Mile</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Last-Mile Connectivity</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Learn More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item" data-aos="zoom-in" data-aos-delay="1900">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
+                    alt="Heavy Load Transportation" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Bulk & Heavy Loads</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Specialized Cargo Transport</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Learn More</a>
+                </div>
+
+              </div>
+            </li>
+
           </ul>
-      
+
         </div>
       </section>
 
+
+
+      <!-- 
+        - #REQUIREMENT FORM
+      -->
+
+      <section class="section requirement-form" aria-label="requirement form" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Get Your Quote</p>
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Tell Us Your Requirements</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
+            Fill out the form below with your shipment details and we'll provide you with a customized quote and solution.
+          </p>
+
+          <div class="requirement-container" data-aos="zoom-in" data-aos-delay="900">
+            <form class="requirement-form" id="requirementForm" action="https://formspree.io/f/your-form-id" method="POST">
+              <div class="form-grid">
+                <!-- Customer Information -->
+                <div class="form-section">
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1100">Customer Information</h3>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1200">
+                      <label for="customerName">Full Name *</label>
+                      <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1300">
+                      <label for="customerPhone">Phone Number *</label>
+                      <input type="tel" id="customerPhone" name="customerPhone" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1400">
+                      <label for="customerEmail">Email Address *</label>
+                      <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1500">
+                      <label for="companyName">Company Name</label>
+                      <input type="text" id="companyName" name="companyName">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Shipment Details -->
+                <div class="form-section">
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1600">Shipment Details</h3>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1700">
+                      <label for="pickupLocation">Pickup Location *</label>
+                      <input type="text" id="pickupLocation" name="pickupLocation" placeholder="City, State" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1800">
+                      <label for="deliveryLocation">Delivery Location *</label>
+                      <input type="text" id="deliveryLocation" name="deliveryLocation" placeholder="City, State" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1900">
+                      <label for="shipmentType">Type of Shipment *</label>
+                      <select id="shipmentType" name="shipmentType" required>
+                        <option value="">Select Shipment Type</option>
+                        <option value="FTL">Full Truckload (FTL)</option>
+                        <option value="LTL">Less Than Truckload (LTL)</option>
+                        <option value="Express">Express Cargo</option>
+                        <option value="Interstate">Interstate Transport</option>
+                        <option value="Specialized">Specialized Transport</option>
+                        <option value="Warehousing">Warehousing & Distribution</option>
+                        <option value="Warehousing">Others</option>
+                      </select>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2000">
+                      <label for="truckType">Truck Type Required</label>
+                      <select id="truckType" name="truckType">
+                        <option value="">Select Truck Type</option>
+                        <option value="Open Truck">Open Truck</option>
+                        <option value="Closed Truck">Closed Truck</option>
+                        <option value="Container">Container</option>
+                        <option value="Refrigerated">Refrigerated Truck</option>
+                        <option value="Flatbed">Flatbed Truck</option>
+                        <option value="Heavy Duty">Heavy Duty Truck</option>
+                        <option value="Warehousing">Others</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cargo Specifications -->
+                <div class="form-section">
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="2100">Cargo Specifications</h3>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2200">
+                      <label for="weight">Weight (in tons) *</label>
+                      <input type="number" id="weight" name="weight" step="0.01" placeholder="e.g., 5.5" required>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2300">
+                      <label for="height">Height (in feet)</label>
+                      <input type="number" id="height" name="height" step="0.1" placeholder="e.g., 8.5">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2400">
+                      <label for="length">Length (in feet)</label>
+                      <input type="number" id="length" name="length" step="0.1" placeholder="e.g., 20">
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2500">
+                      <label for="width">Width (in feet)</label>
+                      <input type="number" id="width" name="width" step="0.1" placeholder="e.g., 7">
+                    </div>
+                  </div>
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="2600">
+                    <label for="cargoDescription">Cargo Description *</label>
+                    <textarea id="cargoDescription" name="cargoDescription" rows="3" placeholder="Describe your goods (e.g., Electronics, Machinery, Textiles, etc.)" required></textarea>
+                  </div>
+                </div>
+
+                <!-- Additional Requirements -->
+                <div class="form-section">
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="2700">Additional Requirements</h3>
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="2800">
+                    <label for="specialRequirements">Special Requirements</label>
+                    <textarea id="specialRequirements" name="specialRequirements" rows="3" placeholder="Any special handling, temperature control, or other requirements"></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="2900">
+                      <label for="urgency">Urgency Level</label>
+                      <select id="urgency" name="urgency">
+                        <option value="Normal">Normal (3-5 days)</option>
+                        <option value="Express">Express (1-2 days)</option>
+                        <option value="Same Day">Same Day</option>
+                      </select>
+                    </div>
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="3000">
+                      <label for="budget">Budget Range</label>
+                      <select id="budget" name="budget">
+                        <option value="">Select Budget Range</option>
+                        <option value="Under 10K">Under ₹10,000</option>
+                        <option value="10K-25K">₹10,000 - ₹25,000</option>
+                        <option value="25K-50K">₹25,000 - ₹50,000</option>
+                        <option value="50K-100K">₹50,000 - ₹1,00,000</option>
+                        <option value="Above 100K">Above ₹1,00,000</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions" data-aos="fade-up" data-aos-delay="3100">
+                <button type="submit" class="btn btn-primary">Submit Requirements</button>
+                <button type="reset" class="btn btn-secondary">Reset Form</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #CAREERS
+      -->
+
+      <section class="section careers" id="careers" aria-label="careers" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Join Our Team</p>
+
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Build Your Career With Us</h2>
+
+          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
+            Join our dynamic team and be part of India's leading logistics company. We offer exciting opportunities for growth, learning, and professional development.
+          </p>
+
+          <div class="careers-grid">
+            <div class="career-card" data-aos="fade-up" data-aos-delay="900">
+              <div class="career-icon">
+                <ion-icon name="car-outline"></ion-icon>
+              </div>
+              <h3>Fleet Operations</h3>
+              <p>Join our fleet management team and help ensure smooth operations across our extensive network.</p>
+              <ul class="career-benefits">
+                <li>Competitive salary packages</li>
+                <li>Health insurance coverage</li>
+                <li>Professional development</li>
+                <li>Performance bonuses</li>
+              </ul>
+              <a href="careers.html" class="career-btn">Apply Now</a>
+            </div>
+
+            <div class="career-card" data-aos="fade-up" data-aos-delay="1100">
+              <div class="career-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3>Customer Service</h3>
+              <p>Be the voice of our company and help deliver exceptional customer experiences every day.</p>
+              <ul class="career-benefits">
+                <li>Flexible work schedules</li>
+                <li>Comprehensive training</li>
+                <li>Career advancement</li>
+                <li>Team building activities</li>
+              </ul>
+              <a href="careers.html" class="career-btn">Apply Now</a>
+            </div>
+
+            <div class="career-card" data-aos="fade-up" data-aos-delay="1300">
+              <div class="career-icon">
+                <ion-icon name="analytics-outline"></ion-icon>
+              </div>
+              <h3>Logistics Management</h3>
+              <p>Drive operational excellence and optimize our logistics processes for maximum efficiency.</p>
+              <ul class="career-benefits">
+                <li>Industry-leading compensation</li>
+                <li>Modern work environment</li>
+                <li>Continuous learning</li>
+                <li>Leadership opportunities</li>
+              </ul>
+              <a href="careers.html" class="career-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="careers-cta" data-aos="fade-up" data-aos-delay="1500">
+            <h3>Ready to Join Our Team?</h3>
+            <p>Send us your resume and let's discuss how you can contribute to our success story.</p>
+            <a href="careers.html" class="cta-btn">View All Positions</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact" aria-label="contact" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Get In Touch</p>
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Contact Us Today</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
+            Ready to ship? Contact our team for personalized logistics solutions and get a free quote.
+          </p>
+
+          <div class="contact-content">
+            <div class="contact-info" data-aos="slide-right" data-aos-delay="900">
+              <div class="contact-item" data-aos="fade-right" data-aos-delay="1100">
+                <div class="contact-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
+                  <h3>Phone Numbers</h3>
+                  <p>+91 9664874523</p>
+                  <p>+91 93068 62567</p>
+                </div>
+              </div>
+
+              <div class="contact-item" data-aos="fade-right" data-aos-delay="1300">
+                <div class="contact-icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
+                  <h3>Email Address</h3>
+                  <p>info@transcorelogistics.in</p>
+                </div>
+              </div>
+
+              <div class="contact-item" data-aos="fade-right" data-aos-delay="1500">
+                <div class="contact-icon">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
+                  <h3>Office Address</h3>
+                  <p>Vadodara, Gujarat, India</p>
+                  <p>All India Services</p>
+                </div>
+              </div>
+
+              <div class="contact-item" data-aos="fade-right" data-aos-delay="1700">
+                <div class="contact-icon">
+                  <ion-icon name="time-outline"></ion-icon>
+                </div>
+                <div class="contact-details">
+                  <h3>Working Hours</h3>
+                  <p>Monday - Saturday: 8:00 AM - 8:00 PM</p>
+                  <p>Sunday: 10:00 AM - 6:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form" data-aos="slide-left" data-aos-delay="1100">
+              <h3 data-aos="fade-up" data-aos-delay="1300">Send us a Message</h3>
+              <form class="contact-form-element" action="https://formspree.io/f/your-form-id" method="POST" id="contactForm">
+                <div class="form-row">
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="1500">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="1700">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="form-group" data-aos="fade-up" data-aos-delay="1900">
+                  <input type="tel" name="phone" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group" data-aos="fade-up" data-aos-delay="2100">
+                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn" data-aos="zoom-in" data-aos-delay="2300">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- 
         - #NEWSLETTER
       -->
 
-      <section class="section newsletter" aria-label="newsletter">
+      <section class="section newsletter" aria-label="newsletter" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
 
-          <figure class="newsletter-banner img-holder">
+          <figure class="newsletter-banner img-holder" data-aos="slide-right" data-aos-delay="300">
             <img src="./assets/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner"
               class="w-100">
           </figure>
 
-          <div class="newsletter-content">
+          <div class="newsletter-content" data-aos="slide-left" data-aos-delay="500">
 
-            <h2 class="h2 section-title">Subscribe for offers and news</h2>
+            <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="700">Subscribe for offers and news</h2>
 
-            <form action="" class="newsletter-form">
+            <form action="" class="newsletter-form" data-aos="fade-up" data-aos-delay="900">
               <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email"
                 class="email-field">
 
@@ -852,7 +1663,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">Integrated Logistics</a>
+          <a href="#" class="logo">Transcore Logistics</a>
 
 <p class="footer-text">
   Delivering reliable and efficient road freight solutions tailored to your needs.
@@ -884,7 +1695,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     </a>
   </li>
   <li>
-    <a href="mailto:integratedlogistics2018@gmail.com" class="social-link">
+    <a href="mailto:info@transcorelogistics.in" class="social-link">
       <ion-icon name="mail-outline"></ion-icon>
     </a>
   </li>
@@ -980,7 +1791,7 @@ Driven by innovation and a commitment to seamless logistics solutions.”
 
       <div class="footer-bottom">
         <p class="copyright">
-          &copy; 2025 Integrated Logistics. All Rights Reserved <a href="#" class="copyright-link"></a>
+          &copy; 2025 Transcore Logistics. All Rights Reserved <a href="#" class="copyright-link"></a>
         </p>
       </div>
 
@@ -1006,12 +1817,23 @@ Driven by innovation and a commitment to seamless logistics solutions.”
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/tracking.js" defer></script>
 
   <!-- 
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  </script>
 
 </body>
 
