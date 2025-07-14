@@ -16,7 +16,7 @@ let adminMarker = null;
 let isAdminLoggedIn = false;
 
 // API Base URL
-const API_BASE_URL = '/api';
+const API_BASE_URL = 'http://localhost:3000/api';
 
 // DOM Elements
 const trackingForm = document.getElementById('trackingForm');
