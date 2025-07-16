@@ -23,7 +23,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <style>
      /* .hero-text {
-    word-spacing: 50px;
+    word-spacing: 50px;do it
               }
       .h {
         word-spacing:  40px;
@@ -160,6 +160,10 @@
   
       <div class="overlay" data-nav-toggler data-overlay></div>
   
+      <button id="darkModeToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;margin-left:16px;font-size:2.2rem;">
+        <ion-icon name="moon-outline" id="darkModeIcon"></ion-icon>
+      </button>
+  
     </div>
   </header>
 
@@ -264,97 +268,70 @@
         - #ABOUT
       -->
 
-      <section class="section about" id="about" aria-label="about" data-aos="fade-up" data-aos-duration="1200">
+      <section class="section about" id="about" aria-label="about" data-aos="fade-up" data-aos-duration="600">
         <div class="container">
-
-          <figure class="about-banner img-holder" style="--width: 400; --height: 720;" data-aos="slide-right" data-aos-delay="300">
-            <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt=""
-              class="img-cover">
-
-            <!-- <img src="./assets/images/5+.png" width="260" height="170" loading="lazy" alt=""
-              class="abs-img abs-img-1"> -->
-
-            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
-              class="abs-img abs-img-2">
+          <figure class="about-banner img-holder" style="--width: 400; --height: 720;" data-aos="slide-right" data-aos-delay="150">
+            <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt="" class="img-cover">
+            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt="" class="abs-img abs-img-2">
           </figure>
-
-          <div class="about-content" data-aos="slide-left" data-aos-delay="500">
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="700">Why Choose Us</p>
-
-            <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="900">We Are Professional Logistics</h2>
-
-            <p class="section-text" data-aos="fade-up" data-aos-delay="1100">
+          <div class="about-content" data-aos="slide-left" data-aos-delay="250">
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="350">Why Choose Us</p>
+            <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="450">We Are Professional Logistics</h2>
+            <p class="section-text" data-aos="fade-up" data-aos-delay="550">
               Delivering excellence with every shipment, ensuring efficiency and reliability. Driven by innovation and a commitment to seamless logistics solutions. With over 10 years of experience, we have built a reputation for reliability, safety, and customer satisfaction across India.
             </p>
-
             <ul class="about-list">
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="1300">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="650">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   Go beyond logistics, make the world go round and revolutionize business.
                 </p>
               </li>
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="1500">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="750">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   Logistics through innovation, dedication, and technology. ready, set, done.
                 </p>
               </li>
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="1700">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="850">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   We take pride in serving our customers safely. together with passion.
                 </p>
               </li>
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="1900">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="950">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   Imagination what we can easily see is only a small percentage.
                 </p>
               </li>
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="2100">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1050">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   Quality never goes out of style. safety, quality, professionalism.
                 </p>
               </li>
-
-              <li class="about-item" data-aos="fade-right" data-aos-delay="2300">
+              <li class="about-item" data-aos="fade-right" data-aos-delay="1150">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
                   The quality shows in every move we make where business lives.
                 </p>
               </li>
-
             </ul>
-
-            <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="2500">Learn More</a>
-
+            <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="1250">Learn More</a>
           </div>
-
         </div>
       </section>
 
@@ -366,159 +343,117 @@
         - #SERVICE
       -->
 
-      <section class="section service" id="service" aria-label="service" data-aos="fade-up" data-aos-duration="1200">
+      <section class="section service" id="service" aria-label="service" data-aos="fade-up" data-aos-duration="600">
         <div class="container">
-
-          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">All Services</p>
-
-          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Trusted For Our Services</h2>
-
-          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
-           <span class="h">SAFE , ECONOMIC ,  FAST</span> AROUND THA NATION .................. ROUND THE CLOCK
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">All Services</p>
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="250">Trusted For Our Services</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="350">
+            <span class="h">SAFE , ECONOMIC ,  FAST</span> AROUND THA NATION .................. ROUND THE CLOCK
           </p>
-
-        <ul class="service-list grid-list">
-
-  <li data-aos="flip-up" data-aos-delay="900">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">01</span> Full Truckload (FTL)
-      </h3>
-
-      <p class="card-text">
-        We provide reliable and efficient full truckload services to transport goods directly from source to destination.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-  <li data-aos="flip-up" data-aos-delay="1100">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-1.png" width="74" height="60" loading="lazy" alt="Ship">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">02</span> Less Than Truckload (LTL)
-      </h3>
-
-      <p class="card-text">
-        Cost-effective transportation for smaller shipments, ensuring safe and timely deliveries.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-  <li data-aos="flip-up" data-aos-delay="1300">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-1.png" width="60" height="60" loading="lazy" alt="Airplane">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">03</span> Express Cargo
-      </h3>
-
-      <p class="card-text">
-        Fast and secure road freight services for urgent shipments with real-time tracking.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-  <li data-aos="flip-up" data-aos-delay="1500">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Train">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">04</span> Interstate Transport
-      </h3>
-
-      <p class="card-text">
-        Seamless road freight solutions for interstate cargo movement with optimized routes.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-  <li data-aos="flip-up" data-aos-delay="1700">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Trolley">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">05</span> Warehousing & Distribution
-      </h3>
-
-      <p class="card-text">
-        Secure storage facilities and efficient distribution networks to streamline logistics.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-  <li data-aos="flip-up" data-aos-delay="1900">
-    <div class="service-card">
-
-      <div class="card-icon">
-        <img src="./assets/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Paper">
-      </div>
-
-      <h3 class="h3 card-title">
-        <span class="span">06</span> Specialized Transport
-      </h3>
-
-      <p class="card-text">
-        Handling oversized, fragile, or high-value goods with dedicated road transport solutions.
-      </p>
-
-      <a href="#" class="btn-link">
-        <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-        <span class="span">View Detail</span>
-      </a>
-
-    </div>
-  </li>
-
-</ul>
-
+          <ul class="service-list grid-list">
+            <li data-aos="flip-up" data-aos-delay="450">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">01</span> Full Truckload (FTL)
+                </h3>
+                <p class="card-text">
+                  We provide reliable and efficient full truckload services to transport goods directly from source to destination.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+            <li data-aos="flip-up" data-aos-delay="550">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="74" height="60" loading="lazy" alt="Ship">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">02</span> Less Than Truckload (LTL)
+                </h3>
+                <p class="card-text">
+                  Cost-effective transportation for smaller shipments, ensuring safe and timely deliveries.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+            <li data-aos="flip-up" data-aos-delay="650">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="60" height="60" loading="lazy" alt="Airplane">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">03</span> Express Cargo
+                </h3>
+                <p class="card-text">
+                  Fast and secure road freight services for urgent shipments with real-time tracking.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+            <li data-aos="flip-up" data-aos-delay="750">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Train">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">04</span> Interstate Transport
+                </h3>
+                <p class="card-text">
+                  Seamless road freight solutions for interstate cargo movement with optimized routes.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+            <li data-aos="flip-up" data-aos-delay="850">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Trolley">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">05</span> Warehousing & Distribution
+                </h3>
+                <p class="card-text">
+                  Secure storage facilities and efficient distribution networks to streamline logistics.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+            <li data-aos="flip-up" data-aos-delay="950">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Paper">
+                </div>
+                <h3 class="h3 card-title">
+                  <span class="span">06</span> Specialized Transport
+                </h3>
+                <p class="card-text">
+                  Handling oversized, fragile, or high-value goods with dedicated road transport solutions.
+                </p>
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+                  <span class="span">View Detail</span>
+                </a>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -1044,8 +979,45 @@
         </div>
       </section>
 
-
-
+      <!-- TESTIMONIALS CAROUSEL -->
+      <section class="section testimonials" aria-label="testimonials" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+          <div class="testimonials-header" data-aos="fade-up" data-aos-delay="200">
+            <p class="section-subtitle">Customer Reviews</p>
+            <h2 class="h2 section-title">What Our Clients Say</h2>
+          </div>
+          <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonial-slide active">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Transcore Logistics exceeded our expectations with their timely deliveries and excellent customer service."</p>
+                <div class="testimonial-author">- Ramesh Kumar, Auto Parts Co.</div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Professional, reliable, and always ready to help. Highly recommended for logistics needs."</p>
+                <div class="testimonial-author">- Priya Singh, FMCG Distributor</div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Their tracking system and support team made our supply chain seamless."</p>
+                <div class="testimonial-author">- Anil Mehta, Pharma Solutions</div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Over Reviews: Our clients consistently rate us highly for reliability, professionalism, and customer satisfaction."</p>
+                <div class="testimonial-author">- Over Reviews</div>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+            <button class="carousel-arrow left" aria-label="Previous review">&#8592;</button>
+            <button class="carousel-arrow right" aria-label="Next review">&#8594;</button>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </section>
 
       <!-- 
         - #FEATURE
@@ -1316,36 +1288,36 @@
         - #REQUIREMENT FORM
       -->
 
-      <section class="section requirement-form" aria-label="requirement form" data-aos="fade-up" data-aos-duration="1200">
+      <section class="section requirement-form" aria-label="requirement form" data-aos="fade-up" data-aos-duration="600">
         <div class="container">
-          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="300">Get Your Quote</p>
-          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="500">Tell Us Your Requirements</h2>
-          <p class="section-text" data-aos="fade-up" data-aos-delay="700">
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">Get Your Quote</p>
+          <h2 class="h2 section-title" data-aos="fade-up" data-aos-delay="250">Tell Us Your Requirements</h2>
+          <p class="section-text" data-aos="fade-up" data-aos-delay="350">
             Fill out the form below with your shipment details and we'll provide you with a customized quote and solution.
           </p>
 
-          <div class="requirement-container" data-aos="zoom-in" data-aos-delay="900">
+          <div class="requirement-container" data-aos="zoom-in" data-aos-delay="450">
             <form class="requirement-form" id="requirementForm" action="https://formspree.io/f/your-form-id" method="POST">
               <div class="form-grid">
                 <!-- Customer Information -->
                 <div class="form-section">
-                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1100">Customer Information</h3>
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="550">Customer Information</h3>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="600">
                       <label for="customerName">Full Name *</label>
                       <input type="text" id="customerName" name="customerName" required>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1300">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="650">
                       <label for="customerPhone">Phone Number *</label>
                       <input type="tel" id="customerPhone" name="customerPhone" required>
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1400">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="700">
                       <label for="customerEmail">Email Address *</label>
                       <input type="email" id="customerEmail" name="customerEmail" required>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1500">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="750">
                       <label for="companyName">Company Name</label>
                       <input type="text" id="companyName" name="companyName">
                     </div>
@@ -1354,19 +1326,19 @@
 
                 <!-- Shipment Details -->
                 <div class="form-section">
-                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1600">Shipment Details</h3>
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="800">Shipment Details</h3>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1700">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="850">
                       <label for="pickupLocation">Pickup Location *</label>
                       <input type="text" id="pickupLocation" name="pickupLocation" placeholder="City, State" required>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1800">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="900">
                       <label for="deliveryLocation">Delivery Location *</label>
                       <input type="text" id="deliveryLocation" name="deliveryLocation" placeholder="City, State" required>
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="1900">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="950">
                       <label for="shipmentType">Type of Shipment *</label>
                       <select id="shipmentType" name="shipmentType" required>
                         <option value="">Select Shipment Type</option>
@@ -1379,7 +1351,7 @@
                         <option value="Warehousing">Others</option>
                       </select>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2000">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1000">
                       <label for="truckType">Truck Type Required</label>
                       <select id="truckType" name="truckType">
                         <option value="">Select Truck Type</option>
@@ -1397,28 +1369,28 @@
 
                 <!-- Cargo Specifications -->
                 <div class="form-section">
-                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="2100">Cargo Specifications</h3>
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1050">Cargo Specifications</h3>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2200">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1100">
                       <label for="weight">Weight (in tons) *</label>
                       <input type="number" id="weight" name="weight" step="0.01" placeholder="e.g., 5.5" required>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2300">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1150">
                       <label for="height">Height (in feet)</label>
                       <input type="number" id="height" name="height" step="0.1" placeholder="e.g., 8.5">
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2400">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1200">
                       <label for="length">Length (in feet)</label>
                       <input type="number" id="length" name="length" step="0.1" placeholder="e.g., 20">
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2500">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1250">
                       <label for="width">Width (in feet)</label>
                       <input type="number" id="width" name="width" step="0.1" placeholder="e.g., 7">
                     </div>
                   </div>
-                  <div class="form-group" data-aos="fade-up" data-aos-delay="2600">
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="1300">
                     <label for="cargoDescription">Cargo Description *</label>
                     <textarea id="cargoDescription" name="cargoDescription" rows="3" placeholder="Describe your goods (e.g., Electronics, Machinery, Textiles, etc.)" required></textarea>
                   </div>
@@ -1426,13 +1398,13 @@
 
                 <!-- Additional Requirements -->
                 <div class="form-section">
-                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="2700">Additional Requirements</h3>
-                  <div class="form-group" data-aos="fade-up" data-aos-delay="2800">
+                  <h3 class="section-heading" data-aos="fade-up" data-aos-delay="1350">Additional Requirements</h3>
+                  <div class="form-group" data-aos="fade-up" data-aos-delay="1400">
                     <label for="specialRequirements">Special Requirements</label>
                     <textarea id="specialRequirements" name="specialRequirements" rows="3" placeholder="Any special handling, temperature control, or other requirements"></textarea>
                   </div>
                   <div class="form-row">
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="2900">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1450">
                       <label for="urgency">Urgency Level</label>
                       <select id="urgency" name="urgency">
                         <option value="Normal">Normal (3-5 days)</option>
@@ -1440,7 +1412,7 @@
                         <option value="Same Day">Same Day</option>
                       </select>
                     </div>
-                    <div class="form-group" data-aos="fade-up" data-aos-delay="3000">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="1500">
                       <label for="budget">Budget Range</label>
                       <select id="budget" name="budget">
                         <option value="">Select Budget Range</option>
@@ -1455,7 +1427,7 @@
                 </div>
               </div>
 
-              <div class="form-actions" data-aos="fade-up" data-aos-delay="3100">
+              <div class="form-actions" data-aos="fade-up" data-aos-delay="1550">
                 <button type="submit" class="btn btn-primary">Submit Requirements</button>
                 <button type="reset" class="btn btn-secondary">Reset Form</button>
               </div>
@@ -1645,6 +1617,35 @@
         </div>
       </section>
 
+      <!-- FAQ ACCORDION -->
+      <section class="section faq" aria-label="Frequently Asked Questions" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+          <div class="faq-header" data-aos="fade-up" data-aos-delay="200">
+            <p class="section-subtitle">FAQ</p>
+            <h2 class="h2 section-title">Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-accordion" id="faqAccordion">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">What areas do you cover for logistics services?</button>
+              <div class="faq-answer">We cover all major cities and regions across India, ensuring nationwide logistics solutions.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How can I track my shipment?</button>
+              <div class="faq-answer">You can track your shipment using our online tracking system or by contacting our support team 24/7.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Do you offer real-time updates?</button>
+              <div class="faq-answer">Yes, we provide real-time tracking and updates for all shipments handled by us.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How do I get a quote for my shipment?</button>
+              <div class="faq-answer">Fill out the 'Tell Us Your Requirements' form on our homepage or contact us directly for a customized quote.</div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+          </div>
+        </div>
+      </section>
+
     </article>
   </main>
 
@@ -1802,18 +1803,6 @@
 
 
   <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
-    <ion-icon name="chevron-up"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
@@ -1834,6 +1823,58 @@
       mirror: false
     });
   </script>
+
+  <script>
+    // Dark mode toggle logic
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function setDarkMode(on) {
+      document.documentElement.classList.toggle('dark-mode', on);
+      darkModeIcon.setAttribute('name', on ? 'sunny-outline' : 'moon-outline');
+      localStorage.setItem('darkMode', on ? '1' : '0');
+    }
+    // Initial mode
+    const saved = localStorage.getItem('darkMode');
+    if (saved === '1' || (saved === null && prefersDark)) setDarkMode(true);
+    darkModeToggle.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark-mode'));
+    });
+  </script>
+
+  <!-- CHATBOT WIDGET -->
+  <div id="chatbot-widget">
+    <div id="chatbot-prompt" class="chatbot-prompt-animate"><span class="chatbot-prompt-emoji">💬</span> Have a doubt? <span class="chatbot-prompt-highlight">Chat with us!</span></div>
+    <button id="chatbot-toggle" aria-label="Open chat">
+      <svg id="chatbot-logo-svg" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="chatbotBubbleGradient2" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFB347"/>
+            <stop offset="1" stop-color="#FF8C00"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="28" cy="28" rx="26" ry="24" fill="url(#chatbotBubbleGradient2)"/>
+        <ellipse cx="28" cy="28" rx="26" ry="24" fill-opacity="0.13"/>
+        <path d="M16 40c0-7 10-10 16-10s16 3 16 10c0 2.5-2.5 5-5 5H21c-2.5 0-5-2.5-5-5z" fill="#fff" fill-opacity="0.18"/>
+        <ellipse id="dot1" cx="22" cy="36" rx="2.7" ry="2.7" fill="#fff"/>
+        <ellipse id="dot2" cx="28" cy="36" rx="2.7" ry="2.7" fill="#fff"/>
+        <ellipse id="dot3" cx="34" cy="36" rx="2.7" ry="2.7" fill="#fff"/>
+      </svg>
+    </button>
+    <div id="chatbot-window" class="chatbot-closed" aria-live="polite">
+      <div class="chatbot-header">
+        <span>Ask Transcore</span>
+        <button id="chatbot-close" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="chatbot-message chatbot-bot">Hi! 👋 How can I help you today?</div>
+      </div>
+      <form id="chatbot-form" autocomplete="off">
+        <input type="text" id="chatbot-input" placeholder="Type your question..." aria-label="Type your question" required />
+        <button type="submit" aria-label="Send">Send</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 

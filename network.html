@@ -747,6 +747,10 @@
         </a>
       </div>
   
+      <button id="darkModeToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;margin-left:16px;font-size:2.2rem;">
+        <ion-icon name="moon-outline" id="darkModeIcon"></ion-icon>
+      </button>
+  
       <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
@@ -1094,6 +1098,24 @@
       duration: 1000,
       easing: 'ease-in-out',
       once: true
+    });
+  </script>
+
+  <script>
+    // Dark mode toggle logic
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function setDarkMode(on) {
+      document.documentElement.classList.toggle('dark-mode', on);
+      darkModeIcon.setAttribute('name', on ? 'sunny-outline' : 'moon-outline');
+      localStorage.setItem('darkMode', on ? '1' : '0');
+    }
+    // Initial mode
+    const saved = localStorage.getItem('darkMode');
+    if (saved === '1' || (saved === null && prefersDark)) setDarkMode(true);
+    darkModeToggle.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark-mode'));
     });
   </script>
 
