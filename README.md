@@ -1,10 +1,4 @@
-Great! Based on your GitHub project RahilGiri/Logistics and your live website transcorelogistics.in, here is a tailored README.md file you can directly copy and add to your repository:
-
-⸻
-
-✅ Final README.md (customized for your project)
-
-# 🚛 Transcore Logistics - Official Website
+ 🚛 Transcore Logistics - Official Website
 
 This repository contains the source code for the official website of **Transcore Logistics**, a leading logistics and transportation service provider in India.
 
@@ -12,7 +6,7 @@ This repository contains the source code for the official website of **Transcore
 
 ---
 
-## 📌 Project Overview
+ 📌 Project Overview
 
 This project is designed to provide:
 
@@ -23,7 +17,7 @@ This project is designed to provide:
 
 ---
 
-## 🧰 Tech Stack
+ 🧰 Tech Stack
 
 | Technology | Purpose                         |
 |------------|---------------------------------|
@@ -37,7 +31,7 @@ This project is designed to provide:
 
 ---
 
-## ✨ Features
+ ✨ Features
 
 - ✅ Responsive website layout
 - ✅ Sitemap submission (`sitemap.xml`)
@@ -47,7 +41,7 @@ This project is designed to provide:
 
 ---
 
-## 📁 Folder Structure
+ 📁 Folder Structure
 
 ├── index.html
 ├── about.html
@@ -64,7 +58,7 @@ This project is designed to provide:
 
 ---
 
-## 🚀 Deployment Instructions
+ 🚀 Deployment Instructions
 
 To make updates or publish new changes to your site:
 
@@ -103,7 +97,7 @@ git push origin main
 For issues or questions:
 
 Rahil Giri
-✉️ rahilgiri@example.com
+✉️ rahilgiri1316@gmail.com
 🌐 https://www.transcorelogistics.in
 
 ⸻
