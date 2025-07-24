@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Integrated Logistics - To every direction</title>
+  <meta name="description" content="Transcore Logistics offers reliable, efficient, and nationwide logistics and shipping solutions. Track your shipments, explore our services, and connect with India's trusted logistics partner.">
+  <meta name="keywords" content="Transcore, Transcore Logistics, logistics, Vadodara, India, shipping, supply chain, freight, warehousing, transport, courier, delivery, cargo, express, logistics company, logistics Vadodara, best logistics, logistics services, logistics provider, logistics solutions, integrated logistics, nationwide logistics, reliable logistics, efficient logistics, track shipment, track logistics, logistics support, logistics partner, logistics network, logistics management, logistics tracking, logistics company Vadodara, logistics India, logistics Gujarat, logistics services Vadodara, logistics services India, logistics services Gujarat, supply chain Vadodara, supply chain India, supply chain Gujarat, shipping Vadodara, shipping India, shipping Gujarat, freight Vadodara, freight India, freight Gujarat, warehousing Vadodara, warehousing India, warehousing Gujarat, transport Vadodara, transport India, transport Gujarat, courier Vadodara, courier India, courier Gujarat, delivery Vadodara, delivery India, delivery Gujarat, cargo Vadodara, cargo India, cargo Gujarat, express Vadodara, express India, express Gujarat, logistics tracking Vadodara, logistics tracking India, logistics tracking Gujarat">
+  <meta name="geo.region" content="IN-GJ">
+  <meta name="geo.placename" content="Vadodara">
+  <meta name="geo.position" content="22.3072;73.1812">
+  <meta name="ICBM" content="22.3072, 73.1812">
 
   <!-- 
     - favicon
@@ -54,6 +60,58 @@
   <!-- 
     - preload images
   -->
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Transcore Logistics - Vadodara's Trusted Logistics Partner">
+  <meta property="og:description" content="Transcore Logistics offers reliable, efficient, and nationwide logistics and shipping solutions from Vadodara, India.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.transcorelogistics.in/">
+  <meta property="og:image" content="https://www.transcorelogistics.in/assets/images/logofinal.jpeg">
+  <meta property="og:site_name" content="Transcore Logistics">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Transcore Logistics - Vadodara's Trusted Logistics Partner">
+  <meta name="twitter:description" content="Transcore Logistics offers reliable, efficient, and nationwide logistics and shipping solutions from Vadodara, India.">
+  <meta name="twitter:image" content="https://www.transcorelogistics.in/assets/images/logofinal.jpeg">
+  <meta name="twitter:site" content="@transcorelogistics">
+
+  <!-- Business Contact Meta Tags -->
+  <meta name="business:contact_data:street_address" content="Your Street Address, Vadodara, Gujarat, India">
+  <meta name="business:contact_data:locality" content="Vadodara">
+  <meta name="business:contact_data:region" content="Gujarat">
+  <meta name="business:contact_data:country_name" content="India">
+  <meta name="business:contact_data:email" content="info@transcorelogistics.in">
+  <meta name="business:contact_data:phone_number" content="+91-9664874523">
+  <meta name="business:contact_data:website" content="https://www.transcorelogistics.in/">
+
+  <!-- JSON-LD Structured Data for Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Transcore Logistics",
+    "url": "https://www.transcorelogistics.in/",
+    "logo": "https://www.transcorelogistics.in/assets/images/logofinal.jpeg",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-9664874523",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vadodara, Gujarat, India",
+      "addressLocality": "Vadodara",
+      "addressRegion": "Gujarat",
+      "postalCode": "391310",
+      "addressCountry": "IN"
+    },
+  
+  }
+  </script>
 </head>
 
 <body id="top">
@@ -66,7 +124,7 @@
   
       <h1>
         <a href="#" class="logo">
-          <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+          <img src="./assets/images/logofinal.jpeg" alt="Transcore Logistics company logo" class="logo-img">
           Transcore Logistics
         </a>
       </h1>
@@ -75,7 +133,7 @@
   
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="./assets/images/logofinal.jpeg" alt="Logo" class="logo-img">
+            <img src="./assets/images/logofinal.jpeg" alt="Transcore Logistics company logo" class="logo-img">
             Transcore Logistics
           </a>
   
@@ -133,6 +191,13 @@
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
+<!-- 
+          <li class="navbar-item">
+            <a href="admin.html" class="navbar-link" data-nav-link>
+              <span>Admin</span>
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li> -->
         </ul>
   
       </nav>
@@ -1828,15 +1893,15 @@
     // Dark mode toggle logic
     const darkModeToggle = document.getElementById('darkModeToggle');
     const darkModeIcon = document.getElementById('darkModeIcon');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     function setDarkMode(on) {
       document.documentElement.classList.toggle('dark-mode', on);
       darkModeIcon.setAttribute('name', on ? 'sunny-outline' : 'moon-outline');
       localStorage.setItem('darkMode', on ? '1' : '0');
     }
-    // Initial mode
+    // Initial mode: always light unless user previously chose dark
     const saved = localStorage.getItem('darkMode');
-    if (saved === '1' || (saved === null && prefersDark)) setDarkMode(true);
+    if (saved === '1') setDarkMode(true);
+    else setDarkMode(false);
     darkModeToggle.addEventListener('click', () => {
       setDarkMode(!document.documentElement.classList.contains('dark-mode'));
     });

@@ -1,1 +1,24 @@
-.vercel
+# Node.js dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment and config files with sensitive info
+firebase-key.json
+
+# Build or generated files (if any)
+dist/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Database files or local data storage
+tracking.db
+
+# Lock files (optional: some teams commit package-lock.json)
+# You can keep package-lock.json if you want consistent installs
+# but if you want to ignore it, uncomment the line below
+# package-lock.json
