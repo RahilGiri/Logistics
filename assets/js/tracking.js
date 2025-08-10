@@ -144,9 +144,15 @@ async function updateShipmentAPI(consignmentNumber, origin, destination, dispatc
     });
     
     const data = await response.json();
+    
+    if (data.success) {
+      console.log(`Shipment ${data.isNewShipment ? 'created' : 'updated'} successfully:`, data.shipment);
+      showMessage(`Shipment ${data.isNewShipment ? 'created' : 'updated'} successfully!`, 'success');
+    }
+    
     return data;
   } catch (error) {
-    console.error('Error updating shipment:', error);
+    console.error('Error updating/creating shipment:', error);
     return { success: false, error: 'Network error' };
   }
 }
@@ -154,6 +160,23 @@ async function updateShipmentAPI(consignmentNumber, origin, destination, dispatc
 // Initialize tracking system
 function initTracking() {
   console.log('Initializing tracking system...');
+  
+  // Check if Leaflet is available
+  if (typeof L === 'undefined') {
+    console.warn('Leaflet library not loaded yet. Maps will be initialized when available.');
+    // Wait a bit for Leaflet to load
+    setTimeout(() => {
+      if (typeof L !== 'undefined') {
+        console.log('Leaflet now available, initializing maps...');
+        // Re-initialize any maps that might need it
+        if (adminPanel && adminPanel.style.display === 'block') {
+          initAdminMap();
+        }
+      }
+    }, 1000);
+  } else {
+    console.log('Leaflet library is available');
+  }
   
   // Initialize event listeners
   if (trackingForm) {
@@ -378,23 +401,37 @@ function initTrackingMap(shipment) {
   const mapContainer = document.getElementById('trackingMap');
   if (!mapContainer) return;
   
-  // Clear existing map
-  if (trackingMap) {
-    trackingMap.remove();
+  // Check if Leaflet is available
+  if (typeof L === 'undefined') {
+    console.error('Leaflet library not loaded. Map will not be displayed.');
+    mapContainer.innerHTML = '<div class="map-error">Map unavailable - Leaflet library not loaded</div>';
+    return;
   }
   
-  // Initialize map
-  trackingMap = L.map('trackingMap').setView([shipment.latitude, shipment.longitude], 10);
-  
-  // Add tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(trackingMap);
-  
-  // Add marker
-  currentMarker = L.marker([shipment.latitude, shipment.longitude])
-    .addTo(trackingMap)
-    .bindPopup(`<b>${shipment.currentLocation}</b><br>Status: ${shipment.status}`);
+  try {
+    // Clear existing map
+    if (trackingMap) {
+      trackingMap.remove();
+    }
+    
+    // Initialize map
+    trackingMap = L.map('trackingMap').setView([shipment.latitude, shipment.longitude], 10);
+    
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(trackingMap);
+    
+    // Add marker
+    currentMarker = L.marker([shipment.latitude, shipment.longitude])
+      .addTo(trackingMap)
+      .bindPopup(`<b>${shipment.currentLocation}</b><br>Status: ${shipment.status}`);
+      
+    console.log('Map initialized successfully');
+  } catch (error) {
+    console.error('Error initializing map:', error);
+    mapContainer.innerHTML = '<div class="map-error">Error loading map</div>';
+  }
 }
 
 // Initialize quick tracking map
@@ -402,23 +439,37 @@ function initQuickTrackingMap(shipment) {
   const mapContainer = document.getElementById('quickTrackingMap');
   if (!mapContainer) return;
   
-  // Clear existing map
-  if (trackingMap) {
-    trackingMap.remove();
+  // Check if Leaflet is available
+  if (typeof L === 'undefined') {
+    console.error('Leaflet library not loaded. Quick tracking map will not be displayed.');
+    mapContainer.innerHTML = '<div class="map-error">Map unavailable - Leaflet library not loaded</div>';
+    return;
   }
   
-  // Initialize map
-  trackingMap = L.map('quickTrackingMap').setView([shipment.latitude, shipment.longitude], 10);
-  
-  // Add tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(trackingMap);
-  
-  // Add marker
-  currentMarker = L.marker([shipment.latitude, shipment.longitude])
-    .addTo(trackingMap)
-    .bindPopup(`<b>${shipment.currentLocation}</b><br>Status: ${shipment.status}`);
+  try {
+    // Clear existing map
+    if (trackingMap) {
+      trackingMap.remove();
+    }
+    
+    // Initialize map
+    trackingMap = L.map('quickTrackingMap').setView([shipment.latitude, shipment.longitude], 10);
+    
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(trackingMap);
+    
+    // Add marker
+    currentMarker = L.marker([shipment.latitude, shipment.longitude])
+      .addTo(trackingMap)
+      .bindPopup(`<b>${shipment.currentLocation}</b><br>Status: ${shipment.status}`);
+      
+    console.log('Quick tracking map initialized successfully');
+  } catch (error) {
+    console.error('Error initializing quick tracking map:', error);
+    mapContainer.innerHTML = '<div class="map-error">Error loading map</div>';
+  }
 }
 
 // Build timeline HTML
@@ -643,20 +694,33 @@ function initAdminMap() {
   const mapContainer = document.getElementById('adminMap');
   if (!mapContainer) return;
   
-  // Clear existing map
-  if (adminMap) {
-    adminMap.remove();
+  // Check if Leaflet is available
+  if (typeof L === 'undefined') {
+    console.error('Leaflet library not loaded. Admin map will not be displayed.');
+    mapContainer.innerHTML = '<div class="map-error">Map unavailable - Leaflet library not loaded</div>';
+    return;
   }
   
-  // Initialize map centered on India
-  adminMap = L.map('adminMap').setView([23.5937, 78.9629], 5);
-  
-  // Add tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(adminMap);
-  
-  // Map is now just for display - coordinates are auto-generated from location name
+  try {
+    // Clear existing map
+    if (adminMap) {
+      adminMap.remove();
+    }
+    
+    // Initialize map centered on India
+    adminMap = L.map('adminMap').setView([23.5937, 78.9629], 5);
+    
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(adminMap);
+    
+    console.log('Admin map initialized successfully');
+    // Map is now just for display - coordinates are auto-generated from location name
+  } catch (error) {
+    console.error('Error initializing admin map:', error);
+    mapContainer.innerHTML = '<div class="map-error">Error loading admin map</div>';
+  }
 }
 
 // Handle admin logout
@@ -722,8 +786,8 @@ async function handleAdminUpdate(e) {
     console.log('API response:', result);
     
     if (result.success) {
-      console.log('Shipment updated successfully:', result.shipment);
-      showMessage('Shipment status updated successfully!', 'success');
+      console.log(`Shipment ${result.isNewShipment ? 'created' : 'updated'} successfully:`, result.shipment);
+      showMessage(`Shipment ${result.isNewShipment ? 'created' : 'updated'} successfully!`, 'success');
       
       // Clear form
       adminForm.reset();
@@ -734,7 +798,7 @@ async function handleAdminUpdate(e) {
         // Use default coordinates since we removed lat/lng fields
         adminMarker = L.marker([23.5937, 78.9629])
           .addTo(adminMap)
-          .bindPopup(`Updated Location<br>${currentLocation}<br>Status: ${status}`);
+          .bindPopup(`${result.isNewShipment ? 'New' : 'Updated'} Location<br>${currentLocation}<br>Status: ${status}`);
       }
         
     } else {

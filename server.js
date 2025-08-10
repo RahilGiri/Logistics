@@ -2,50 +2,56 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const helmet = require('helmet');
+const compression = require('compression');
+const rateLimit = require('express-rate-limit');
+const { connectDB, closeDB } = require('./config/database');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// Security and Performance Middleware
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https:"],
+    },
+  },
+}));
+app.use(compression());
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later.'
+});
+app.use('/api/', limiter);
+
+// CORS and Body Parser
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*',
+  credentials: true
+}));
+app.use(express.json({ limit: '10mb' }));
 app.use(express.static('.'));
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/transcore_logistics', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB successfully!');
+connectDB().then(() => {
   initializeDefaultData();
+}).catch(err => {
+  console.error('Failed to connect to database:', err);
+  process.exit(1);
 });
-
-// Shipment Schema
-const shipmentSchema = new mongoose.Schema({
-  consignmentNo: { type: String, required: true, unique: true },
-  origin: { type: String, required: true },
-  destination: { type: String, required: true },
-  status: { type: String, required: true },
-  dispatchDate: { type: String, required: true },
-  expectedDelivery: { type: String, required: true },
-  currentLocation: { type: String, required: true },
-  latitude: { type: Number, required: true },
-  longitude: { type: Number, required: true },
-  timeline: [{
-    location: { type: String, required: true },
-    time: { type: String, required: true },
-    description: { type: String, required: true },
-    completed: { type: Boolean, default: false }
-  }]
-});
-
-const Shipment = mongoose.model('Shipment', shipmentSchema);
 
 // Initialize default data
+const Shipment = require('./models/shipment');
+
 async function initializeDefaultData() {
   try {
     const count = await Shipment.countDocuments();
@@ -227,6 +233,40 @@ async function initializeDefaultData() {
   }
 }
 
+// Health Check Route
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: NODE_ENV,
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+  });
+});
+
+// Database Status Route
+app.get('/api/status', async (req, res) => {
+  try {
+    const totalShipments = await Shipment.countDocuments();
+    const recentShipments = await Shipment.find({})
+      .sort({ _id: -1 })
+      .limit(5)
+      .select('consignmentNo origin destination status currentLocation');
+    
+    res.json({
+      success: true,
+      database: {
+        status: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+        totalShipments,
+        recentShipments
+      }
+    });
+  } catch (error) {
+    console.error('Error getting database status:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -241,16 +281,21 @@ app.post('/api/track', async (req, res) => {
   try {
     const { consignmentNo, shipmentDate } = req.body;
     
+    console.log('Tracking request received:', { consignmentNo, shipmentDate });
+    
     if (!consignmentNo) {
+      console.log('Tracking failed: Missing consignment number');
       return res.status(400).json({ error: 'Consignment number is required' });
     }
     
     const shipment = await Shipment.findOne({ consignmentNo: consignmentNo.toUpperCase() });
     
     if (!shipment) {
+      console.log('Tracking failed: Shipment not found:', consignmentNo);
       return res.status(404).json({ success: false, error: 'Shipment not found' });
     }
     
+    console.log('Tracking successful:', shipment.consignmentNo);
     res.json({ success: true, shipment });
   } catch (error) {
     console.error('Error tracking shipment:', error);
@@ -287,38 +332,50 @@ app.post('/api/admin/login', (req, res) => {
   }
 });
 
-// Update shipment API
+// Update or Create shipment API
 app.post('/api/admin/update', async (req, res) => {
   try {
     const { consignmentNo, origin, destination, dispatchDate, currentLocation, status, expectedDelivery, timeline } = req.body;
     
-    console.log('Update request received:', req.body);
+    console.log('Update/Create request received:', req.body);
     
-    if (!consignmentNo || !origin || !destination || !dispatchDate || !currentLocation || !status || !expectedDelivery || !timeline) {
+    if (!consignmentNo || !origin || !destination || !dispatchDate || !currentLocation || !status || !expectedDelivery) {
       return res.status(400).json({ error: 'All fields are required' });
     }
     
-    // Check if shipment exists
+    // Try to find existing shipment
     let shipment = await Shipment.findOne({ consignmentNo: consignmentNo.toUpperCase() });
     
     if (!shipment) {
-      // Create new shipment if it doesn't exist
       console.log('Creating new shipment:', consignmentNo);
+      // Create new shipment if it doesn't exist
       shipment = new Shipment({
         consignmentNo: consignmentNo.toUpperCase(),
-        origin: origin,
-        destination: destination,
-        status: status,
-        dispatchDate: dispatchDate,
-        expectedDelivery: expectedDelivery,
-        currentLocation: currentLocation,
+        origin,
+        destination,
+        status,
+        dispatchDate,
+        expectedDelivery,
+        currentLocation,
         latitude: 23.5937, // Default coordinates (center of India)
         longitude: 78.9629,
-        timeline: []
+        timeline: [{
+          location: currentLocation,
+          time: new Date().toLocaleString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+          }),
+          description: `Shipment created at ${currentLocation}`,
+          completed: true
+        }]
       });
     }
     
-    // Add new timeline entry
+    // Add new timeline entry only if there are meaningful changes
     const newEntry = {
       location: currentLocation,
       time: new Date().toLocaleString('en-US', {
@@ -329,26 +386,35 @@ app.post('/api/admin/update', async (req, res) => {
         minute: '2-digit',
         hour12: true
       }),
-      description: `Location updated: ${currentLocation}`,
+      description: `Status updated: ${status} at ${currentLocation}`,
       completed: true
     };
     
-    // Update shipment
+    // Update shipment fields
     shipment.origin = origin;
     shipment.destination = destination;
     shipment.currentLocation = currentLocation;
     shipment.status = status;
     shipment.dispatchDate = dispatchDate;
     shipment.expectedDelivery = expectedDelivery;
-    shipment.timeline.push(newEntry);
+    
+    // Add timeline entry only if location or status changed
+    const lastEntry = shipment.timeline[shipment.timeline.length - 1];
+    if (!lastEntry || 
+        lastEntry.location !== currentLocation || 
+        lastEntry.description !== `Status updated: ${status} at ${currentLocation}`) {
+      shipment.timeline.push(newEntry);
+    }
     
     await shipment.save();
     
-    console.log('Shipment updated successfully:', shipment.consignmentNo);
+    const isNewShipment = !shipment._id;
+    console.log(`Shipment ${isNewShipment ? 'created' : 'updated'} successfully:`, shipment.consignmentNo);
     
     res.json({
       success: true,
-      message: 'Shipment updated successfully',
+      message: `Shipment ${isNewShipment ? 'created' : 'updated'} successfully`,
+      isNewShipment,
       shipment: {
         consignmentNo: shipment.consignmentNo,
         origin: shipment.origin,
@@ -379,12 +445,117 @@ app.get('/api/admin/shipments', async (req, res) => {
   }
 });
 
+// Create new shipment API (for admin use only)
+app.post('/api/admin/create', async (req, res) => {
+  try {
+    const { consignmentNo, origin, destination, dispatchDate, currentLocation, status, expectedDelivery } = req.body;
+    
+    console.log('Create shipment request received:', req.body);
+    
+    if (!consignmentNo || !origin || !destination || !dispatchDate || !currentLocation || !status || !expectedDelivery) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+    
+    // Check if shipment already exists
+    const existingShipment = await Shipment.findOne({ consignmentNo: consignmentNo.toUpperCase() });
+    if (existingShipment) {
+      return res.status(409).json({ error: 'Shipment with this consignment number already exists' });
+    }
+    
+    // Create new shipment
+    const newShipment = new Shipment({
+      consignmentNo: consignmentNo.toUpperCase(),
+      origin: origin,
+      destination: destination,
+      status: status,
+      dispatchDate: dispatchDate,
+      expectedDelivery: expectedDelivery,
+      currentLocation: currentLocation,
+      latitude: 23.5937, // Default coordinates (center of India)
+      longitude: 78.9629,
+      timeline: [{
+        location: currentLocation,
+        time: new Date().toLocaleString('en-US', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        }),
+        description: `Shipment created at ${currentLocation}`,
+        completed: true
+      }]
+    });
+    
+    await newShipment.save();
+    console.log('New shipment created successfully:', newShipment.consignmentNo);
+    
+    res.json({
+      success: true,
+      message: 'Shipment created successfully',
+      shipment: newShipment
+    });
+  } catch (error) {
+    console.error('Error creating shipment:', error);
+    res.status(500).json({ error: 'Internal server error: ' + error.message });
+  }
+});
+
+// Cleanup fake shipments API (for development/testing only)
+app.delete('/api/admin/cleanup', async (req, res) => {
+  try {
+    // Only allow in development mode
+    if (NODE_ENV === 'production') {
+      return res.status(403).json({ error: 'Cleanup not allowed in production' });
+    }
+    
+    const { consignmentNumbers } = req.body;
+    
+    if (!consignmentNumbers || !Array.isArray(consignmentNumbers)) {
+      return res.status(400).json({ error: 'Array of consignment numbers required' });
+    }
+    
+    const result = await Shipment.deleteMany({ 
+      consignmentNo: { $in: consignmentNumbers.map(cn => cn.toUpperCase()) } 
+    });
+    
+    console.log(`Cleanup completed: ${result.deletedCount} shipments removed`);
+    
+    res.json({
+      success: true,
+      message: `${result.deletedCount} shipments removed`,
+      deletedCount: result.deletedCount
+    });
+  } catch (error) {
+    console.error('Error during cleanup:', error);
+    res.status(500).json({ error: 'Internal server error: ' + error.message });
+  }
+});
+
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log('Admin Users:');
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${NODE_ENV}`);
+  console.log(`🔗 Server URL: ${NODE_ENV === 'production' ? 'https://yourdomain.com' : `http://localhost:${PORT}`}`);
+  console.log('👥 Admin Users:');
   console.log('- Username: Vikas, Password: Vikas');
   console.log('- Username: Anshul, Password: Anshul');
   console.log('- Username: Sujal, Password: Sujal');
   console.log('- Username: Rahil, Password: Rahil');
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, shutting down gracefully');
+  closeDB().then(() => {
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT received, shutting down gracefully');
+  closeDB().then(() => {
+    process.exit(0);
+  });
 }); 
