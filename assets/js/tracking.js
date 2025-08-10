@@ -16,7 +16,9 @@ let adminMarker = null;
 let isAdminLoggedIn = false;
 
 // API Base URL
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3000/api'
+  : 'https://logistics-b5lc.onrender.com/api';
 
 // DOM Elements
 const trackingForm = document.getElementById('trackingForm');
@@ -827,7 +829,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Test API connection
   console.log('Testing API connection...');
-  fetch('http://localhost:3000/api/admin/shipments')
+  fetch(`${API_BASE_URL}/admin/shipments`)
     .then(response => response.json())
     .then(data => {
       console.log('✅ API connection successful');
