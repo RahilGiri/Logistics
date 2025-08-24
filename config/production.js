@@ -1,7 +1,8 @@
 module.exports = {
   // Database Configuration
   mongodb: {
-    uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/transcore_logistics',
+    // uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/transcore_logistics',
+    url: 'mongodb+srv://Sujal:Giri%401315@cluster0.d2iuery.mongodb.net/transcore_logistics?retryWrites=true&w=majority',
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true,
