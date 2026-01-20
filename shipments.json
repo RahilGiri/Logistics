@@ -1,0 +1,46 @@
+[
+  {
+    "consignment_no": "TC001",
+    "origin": "Mumbai, Maharashtra",
+    "destination": "Delhi, NCR",
+    "status": "In Transit",
+    "expected_delivery": "2025-01-15",
+    "current_location": "Nagpur, Maharashtra",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "timeline": "[{\"location\": \"Mumbai, Maharashtra\", \"time\": \"2025-01-10 08:00 AM\", \"description\": \"Shipment picked up from origin\", \"completed\": true}, {\"location\": \"Pune, Maharashtra\", \"time\": \"2025-01-10 02:00 PM\", \"description\": \"In transit to destination\", \"completed\": true}, {\"location\": \"Nagpur, Maharashtra\", \"time\": \"2025-01-11 10:30 AM\", \"description\": \"Currently at Nagpur hub\", \"completed\": true}, {\"location\": \"Bhopal, Madhya Pradesh\", \"time\": \"2025-01-12 09:00 AM\", \"description\": \"Expected to reach Bhopal\", \"completed\": false}, {\"location\": \"Delhi, NCR\", \"time\": \"2025-01-15 11:00 AM\", \"description\": \"Expected delivery\", \"completed\": false}]"
+  },
+  {
+    "consignment_no": "TC002",
+    "origin": "Bangalore, Karnataka",
+    "destination": "Chennai, Tamil Nadu",
+    "status": "Out for Delivery",
+    "expected_delivery": "2025-01-13",
+    "current_location": "Chennai, Tamil Nadu",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "timeline": "[{\"location\": \"Bangalore, Karnataka\", \"time\": \"2025-01-08 09:00 AM\", \"description\": \"Shipment picked up from origin\", \"completed\": true}, {\"location\": \"Hosur, Tamil Nadu\", \"time\": \"2025-01-09 03:00 PM\", \"description\": \"In transit to destination\", \"completed\": true}, {\"location\": \"Chennai, Tamil Nadu\", \"time\": \"2025-01-10 11:00 AM\", \"description\": \"Arrived at destination hub\", \"completed\": true}, {\"location\": \"Chennai, Tamil Nadu\", \"time\": \"2025-01-13 08:00 AM\", \"description\": \"Out for delivery\", \"completed\": true}]"
+  },
+  {
+    "consignment_no": "TC003",
+    "origin": "Kolkata, West Bengal",
+    "destination": "Hyderabad, Telangana",
+    "status": "Delivered",
+    "expected_delivery": "2025-01-12",
+    "current_location": "Delivered to recipient",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "timeline": "[{\"location\": \"Kolkata, West Bengal\", \"time\": \"2025-01-07 10:00 AM\", \"description\": \"Shipment picked up from origin\", \"completed\": true}, {\"location\": \"Bhubaneswar, Odisha\", \"time\": \"2025-01-08 02:00 PM\", \"description\": \"In transit to destination\", \"completed\": true}, {\"location\": \"Visakhapatnam, Andhra Pradesh\", \"time\": \"2025-01-09 11:00 AM\", \"description\": \"In transit to destination\", \"completed\": true}, {\"location\": \"Hyderabad, Telangana\", \"time\": \"2025-01-10 09:00 AM\", \"description\": \"Arrived at destination hub\", \"completed\": true}, {\"location\": \"Hyderabad, Telangana\", \"time\": \"2025-01-12 02:30 PM\", \"description\": \"Successfully delivered to recipient\", \"completed\": true}]"
+  },
+  {
+    "consignment_no": "TC004",
+    "origin": "Ahmedabad, Gujarat",
+    "destination": "Pune, Maharashtra",
+    "status": "Delayed",
+    "expected_delivery": "2025-01-14",
+    "current_location": "Surat, Gujarat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "timeline": "[{\"location\": \"Ahmedabad, Gujarat\", \"time\": \"2025-01-09 08:00 AM\", \"description\": \"Shipment picked up from origin\", \"completed\": true}, {\"location\": \"Surat, Gujarat\", \"time\": \"2025-01-09 06:00 PM\", \"description\": \"In transit to destination\", \"completed\": true}, {\"location\": \"Surat, Gujarat\", \"time\": \"2025-01-10 09:00 AM\", \"description\": \"Delayed due to weather conditions\", \"completed\": true}, {\"location\": \"Mumbai, Maharashtra\", \"time\": \"2025-01-11 10:00 AM\", \"description\": \"Expected to resume journey\", \"completed\": false}, {\"location\": \"Pune, Maharashtra\", \"time\": \"2025-01-14 11:00 AM\", \"description\": \"Expected delivery\", \"completed\": false}]"
+  }
+]
